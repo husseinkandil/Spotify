@@ -151,13 +151,14 @@ class SearchViewController: UIViewController {
     @objc
     func showProfile() {
         guard let username = username else { return }
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+              let nsObject = Bundle.main.infoDictionary!["CFBundleVersion"] as? AnyObject else { return }
 
         let alert = UIAlertController(title: "Profile", message: "", preferredStyle: .actionSheet)
 
         alert.addAction(UIAlertAction(title: "Username: \(username)", style: .default, handler: nil))
 
-        alert.addAction(UIAlertAction(title: "Version: \(appVersion!)", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Version: \(appVersion) (\(nsObject))", style: .default, handler: nil))
 
         alert.addAction(UIAlertAction(title: "Log out", style: .default, handler: { [weak self] action in
             guard let self = self else { return }

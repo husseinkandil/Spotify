@@ -11,7 +11,6 @@
 		EB2539FD2812FC7700F60E37 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2539FC2812FC7700F60E37 /* SearchViewController.swift */; };
 		EB253A01281345DD00F60E37 /* ArtistsSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A00281345DD00F60E37 /* ArtistsSearchResponse.swift */; };
 		EB253A03281349A800F60E37 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A02281349A800F60E37 /* APIClient.swift */; };
-		EB253A052817020D00F60E37 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A042817020D00F60E37 /* ArtistTableViewCell.swift */; };
 		EB253A0728173A2E00F60E37 /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A0628173A2D00F60E37 /* ArtistCollectionViewCell.swift */; };
 		EB253A0A2818384A00F60E37 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A092818384900F60E37 /* ResultViewController.swift */; };
 		EB253A0C2818386A00F60E37 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A0B2818386A00F60E37 /* ResultModel.swift */; };
@@ -33,7 +32,6 @@
 		EB2539FC2812FC7700F60E37 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EB253A00281345DD00F60E37 /* ArtistsSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsSearchResponse.swift; sourceTree = "<group>"; };
 		EB253A02281349A800F60E37 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		EB253A042817020D00F60E37 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		EB253A0628173A2D00F60E37 /* ArtistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB253A092818384900F60E37 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		EB253A0B2818386A00F60E37 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				EB2539FC2812FC7700F60E37 /* SearchViewController.swift */,
-				EB253A042817020D00F60E37 /* ArtistTableViewCell.swift */,
 				EB253A0628173A2D00F60E37 /* ArtistCollectionViewCell.swift */,
 			);
 			path = Search;
@@ -95,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				EB253A092818384900F60E37 /* ResultViewController.swift */,
-				EB253A0B2818386A00F60E37 /* ResultModel.swift */,
 				EB253A0D2818389000F60E37 /* ResultCollectionViewCell.swift */,
 			);
 			path = SearchResult;
@@ -106,6 +102,7 @@
 			children = (
 				EB253A02281349A800F60E37 /* APIClient.swift */,
 				EB253A00281345DD00F60E37 /* ArtistsSearchResponse.swift */,
+				EB253A0B2818386A00F60E37 /* ResultModel.swift */,
 			);
 			path = APICall;
 			sourceTree = "<group>";
@@ -286,7 +283,6 @@
 			files = (
 				EB35D83A2811F430008D3483 /* AuthenticationViewController.swift in Sources */,
 				EB2539FD2812FC7700F60E37 /* SearchViewController.swift in Sources */,
-				EB253A052817020D00F60E37 /* ArtistTableViewCell.swift in Sources */,
 				EB35D84B2811FBB0008D3483 /* AuthenticationManager.swift in Sources */,
 				EB253A1528184F5C00F60E37 /* UIColor.swift in Sources */,
 				EB253A03281349A800F60E37 /* APIClient.swift in Sources */,

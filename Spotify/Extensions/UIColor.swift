@@ -2,7 +2,7 @@
 //  UIColor.swift
 //  Spotify
 //
-//  Created by Zein Abdalla on 26/04/2022.
+//  Created by Hussein Kandil on 26/04/2022.
 //
 
 import UIKit
