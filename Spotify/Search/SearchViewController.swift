@@ -92,11 +92,10 @@ class SearchViewController: UIViewController {
 
             switch result {
             case .success(let model):
-                guard let image =  model.images.first?.url else { return }
                 self.username = model.display_name
-                self.downloadImage(url: image)
+                self.downloadImage(urlString: model.images.first?.url)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.showAlert(with: error)
             }
         }
     }
@@ -137,10 +136,16 @@ class SearchViewController: UIViewController {
         ])
     }
 
-    private func downloadImage(url: String) {
+    private func downloadImage(urlString: String?) {
         let placeHolderImage = UIImage(systemName: "person.circle")
-        let urlString = url
-        let url = URL(string: urlString)
+        guard let urlString = urlString,
+              let url = URL(string: urlString) else {
+            DispatchQueue.main.async {
+                self.userImage.image = placeHolderImage
+            }
+            return
+        }
+        
         DispatchQueue.main.async {
             self.userImage.kf.setImage(with: url, placeholder: placeHolderImage)
         }

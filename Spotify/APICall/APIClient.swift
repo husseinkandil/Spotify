@@ -12,9 +12,11 @@ enum HTTPMethod: String {
 
 enum APIError: Error {
     case failedFetchingData
+    case custom(message: String)
 }
 
 import UIKit
+import Foundation
 
 final class APIClient {
     static let shared = APIClient()
@@ -39,7 +41,11 @@ final class APIClient {
                     let result = try JSONDecoder().decode(UserProfile.self, from: data)
                     completion(.success(result))
                 } catch {
-                    completion(.failure(error))
+                    if let result = String(data: data, encoding: .utf8) {
+                        completion(.failure(APIError.custom(message: result)))
+                    } else {
+                        completion(.failure(error))
+                    }
                 }
             }
             task.resume()

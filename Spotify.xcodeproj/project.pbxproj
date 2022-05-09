@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EC795CC28299BEC0055ED62 /* UIViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC795CB28299BEC0055ED62 /* UIViewControler.swift */; };
 		3D4C4F9890157E4F7E289615 /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE39AA27AFF8B261500EAC9 /* libPods-Spotify.a */; };
 		EB2539FD2812FC7700F60E37 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2539FC2812FC7700F60E37 /* SearchViewController.swift */; };
 		EB253A01281345DD00F60E37 /* ArtistsSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB253A00281345DD00F60E37 /* ArtistsSearchResponse.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1E2C03F361113382F07B2CE3 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
+		1EC795CB28299BEC0055ED62 /* UIViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControler.swift; sourceTree = "<group>"; };
 		996A523381FC7F66752E97E4 /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		EB2539FC2812FC7700F60E37 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EB253A00281345DD00F60E37 /* ArtistsSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsSearchResponse.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				EB253A1428184F5C00F60E37 /* UIColor.swift */,
+				1EC795CB28299BEC0055ED62 /* UIViewControler.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				EB253A03281349A800F60E37 /* APIClient.swift in Sources */,
 				EB35D8362811F430008D3483 /* AppDelegate.swift in Sources */,
 				EB253A01281345DD00F60E37 /* ArtistsSearchResponse.swift in Sources */,
+				1EC795CC28299BEC0055ED62 /* UIViewControler.swift in Sources */,
 				EB35D84D2811FED0008D3483 /* LoginViewController.swift in Sources */,
 				EB253A0728173A2E00F60E37 /* ArtistCollectionViewCell.swift in Sources */,
 				EB35D8512812F218008D3483 /* AuthenticationResponse.swift in Sources */,
@@ -445,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.hussein.Spotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -473,7 +477,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.hussein.Spotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
