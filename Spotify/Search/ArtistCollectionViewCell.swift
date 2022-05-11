@@ -104,9 +104,9 @@ class ArtistCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
 
             image.topAnchor.constraint(equalTo: contentView.topAnchor),
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            image.heightAnchor.constraint(equalToConstant: 120),
+            image.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            image.heightAnchor.constraint(equalTo: image.widthAnchor),
+            image.widthAnchor.constraint(equalTo: contentView.widthAnchor),
 
             nameLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),

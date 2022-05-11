@@ -17,7 +17,7 @@ class ResultViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: 300)
+        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: 350)
         let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView.layer.shadowOpacity = 2
         collectionView.layer.shadowColor = .init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
