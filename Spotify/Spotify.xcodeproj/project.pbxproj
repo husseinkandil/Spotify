@@ -13,6 +13,9 @@
 		EB799CD72834E7CC00BBE10A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB799CD62834E7CC00BBE10A /* Assets.xcassets */; };
 		EB799CDA2834E7CC00BBE10A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB799CD82834E7CC00BBE10A /* LaunchScreen.storyboard */; };
 		EB799CE72834EB6000BBE10A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB799CE62834EB6000BBE10A /* UIColor.swift */; };
+		EB9B82A12834FF58004BF102 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B82A02834FF58004BF102 /* WebViewController.swift */; };
+		EB9B82A4283500C5004BF102 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B82A3283500C5004BF102 /* AuthenticationResponse.swift */; };
+		EB9B82A6283500E4004BF102 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B82A5283500E4004BF102 /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		EB799CD92834E7CC00BBE10A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB799CDB2834E7CC00BBE10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB799CE62834EB6000BBE10A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		EB9B82A02834FF58004BF102 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		EB9B82A3283500C5004BF102 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
+		EB9B82A5283500E4004BF102 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 		EB799CE32834E8B400BBE10A /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				EB9B82A22834FF8B004BF102 /* Model */,
 				EB799CE42834E8BA00BBE10A /* Controller */,
 			);
 			path = Authentication;
@@ -95,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				EB799CD12834E7CA00BBE10A /* LoginViewController.swift */,
+				EB9B82A02834FF58004BF102 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,6 +113,15 @@
 				EB799CE62834EB6000BBE10A /* UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB9B82A22834FF8B004BF102 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB9B82A3283500C5004BF102 /* AuthenticationResponse.swift */,
+				EB9B82A5283500E4004BF102 /* AuthenticationManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9B82A4283500C5004BF102 /* AuthenticationResponse.swift in Sources */,
 				EB799CD22834E7CA00BBE10A /* LoginViewController.swift in Sources */,
+				EB9B82A6283500E4004BF102 /* AuthenticationManager.swift in Sources */,
 				EB799CE72834EB6000BBE10A /* UIColor.swift in Sources */,
 				EB799CCE2834E7CA00BBE10A /* AppDelegate.swift in Sources */,
+				EB9B82A12834FF58004BF102 /* WebViewController.swift in Sources */,
 				EB799CD02834E7CA00BBE10A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         button.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
         button.layer.shadowOpacity = 2.0
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         return button
     }()
 
@@ -64,5 +65,34 @@ class LoginViewController: UIViewController {
             spotifyImage.widthAnchor.constraint(equalToConstant: 48),
 
         ])
+    }
+
+    @objc
+    func didTapLoginButton() {
+        let vc = WebViewController()
+        vc.completion = { [weak self] success in
+            guard let self = self else { return }
+            self.handleSignin(success: success)
+        }
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func handleSignin(success: Bool) {
+        guard success else {
+            let alert = UIAlertController.init(title: "Error", message: "Error while signing in.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
+            return
+        }
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+class VC: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .red
     }
 }
