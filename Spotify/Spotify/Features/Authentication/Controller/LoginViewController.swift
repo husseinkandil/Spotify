@@ -85,14 +85,9 @@ class LoginViewController: UIViewController {
             present(alert, animated: true)
             return
         }
-        navigationController?.popViewController(animated: true)
-    }
-}
 
-class VC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
+        let vc = SearchViewController()
+        vc.navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
