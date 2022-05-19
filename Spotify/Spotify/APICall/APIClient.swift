@@ -52,6 +52,28 @@ final class APIClient {
         }
     }
 
+    public func getartistProfile(artist: String,completion: @escaping (Result<ArtistsSearchResponse, Error>) -> Void) {
+        createRequest(with: URL(string: Constants.baseUrl+"/search?q=\(artist)&type=artist&limit=50"),
+                      type: .GET) { request in
+
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedFetchingData))
+                    return
+                }
+
+                do {
+                    let result = try JSONDecoder().decode(ArtistsSearchResponse.self, from: data)
+                    completion(.success(result))
+                    print(result)
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+
     private func createRequest(with url: URL?,
                                type: HTTPMethod,
                                completion: @escaping (URLRequest) -> Void) {

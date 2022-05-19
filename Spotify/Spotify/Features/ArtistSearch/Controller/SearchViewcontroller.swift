@@ -11,6 +11,25 @@ import Kingfisher
 class SearchViewController: UIViewController {
 
     private var username: String?
+    private var artistResults = [Artist]()
+    private var pendingRequest: DispatchWorkItem?
+
+    private lazy var navigationView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    lazy var gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.type = .axial
+        gradient.colors = [
+            UIColor.systemCyan.cgColor,
+            UIColor.black.cgColor
+        ]
+        gradient.locations = [0, 1]
+        return gradient
+    }()
 
     private lazy var userImage: UIImageView = {
         let image = UIImageView()
@@ -19,16 +38,56 @@ class SearchViewController: UIViewController {
         return image
     }()
 
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar(frame: .zero)
+        searchBar.placeholder = "Search for an artist..."
+        searchBar.barStyle = .default
+        searchBar.isTranslucent = false
+        searchBar.backgroundColor = .appGrayTextColor
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.delegate = self
+        searchBar.barTintColor = .appGrayTextColor.withAlphaComponent(0.5)
+        searchBar.searchTextField.textColor = .secondarySystemBackground
+        return searchBar
+    }()
+
+    private let noResultLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No Results"
+        label.textColor = .appGrayTextColor
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textAlignment = .center
+        return label
+    }()
+
+    private lazy var collectionView: SpotifyCollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: 260)
+
+        let collectionView = SpotifyCollectionView(frame: view.frame, layout: layout)
+        collectionView.register(ArtistCollectionViewCell.self, forCellWithReuseIdentifier: ArtistCollectionViewCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "Artists"
         navigationItem.hidesBackButton = true
+        gradient.frame = view.bounds
+        view.layer.addSublayer(gradient)
         setupView()
-        fetchUserData()
+        fetchData()
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(showProfile))
         userImage.addGestureRecognizer(gesture)
         userImage.isUserInteractionEnabled = true
+        collectionView.isHidden = false
+        collectionView.backgroundView = noResultLabel
+
     }
 
     override func viewDidLayoutSubviews() {
@@ -41,7 +100,7 @@ class SearchViewController: UIViewController {
         userImage.isHidden = false
     }
 
-    fileprivate func fetchUserData() {
+    fileprivate func fetchData() {
         APIClient.shared.getUserProfile { [weak self] result in
             guard let self = self else { return }
 
@@ -62,6 +121,8 @@ class SearchViewController: UIViewController {
         let navigation = self.navigationController?.navigationBar
         guard let navigation = navigation else { return }
         navigation.addSubview(userImage)
+        view.addSubview(searchBar)
+        view.addSubview(collectionView)
     }
 
     private func setupConstraints() {
@@ -69,11 +130,23 @@ class SearchViewController: UIViewController {
         guard let navigation = navigation else { return }
 
         NSLayoutConstraint.activate([
+
             userImage.topAnchor.constraint(greaterThanOrEqualTo: navigation.topAnchor),
             userImage.trailingAnchor.constraint(greaterThanOrEqualTo: navigation.trailingAnchor, constant: -10),
             userImage.bottomAnchor.constraint(greaterThanOrEqualTo: navigation.bottomAnchor),
             userImage.widthAnchor.constraint(equalToConstant: 50),
             userImage.heightAnchor.constraint(equalToConstant: 50),
+
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 3),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -3),
+            searchBar.heightAnchor.constraint(equalToConstant: 45),
+
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+
         ])
     }
 
@@ -137,3 +210,61 @@ class SearchViewController: UIViewController {
     }
 }
 
+//MARK: - CollectionView
+
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return artistResults.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistCollectionViewCell.identifier, for: indexPath) as! ArtistCollectionViewCell
+
+        let artistData: Artist
+        artistData = artistResults[indexPath.item]
+        cell.populate(model: artistData)
+        return cell
+    }
+}
+
+//MARK: - SearchBar
+extension SearchViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        pendingRequest?.cancel()
+        let text = searchText.replacingOccurrences(of: " ", with: "%20")
+
+        if searchText.isEmpty {
+            collectionView.isHidden = false
+            collectionView.backgroundView = noResultLabel
+            artistResults = []
+            collectionView.reloadData()
+        } else {
+            let requestWorkItem = DispatchWorkItem { [weak self] in
+                guard let self = self else { return }
+
+                self.collectionView.isHidden = false
+                self.collectionView.backgroundView = nil
+                APIClient.shared.getartistProfile(artist: text) { result in
+                    switch result {
+                    case.success(let model):
+                        guard let new = model.artists?.items else { return }
+                        self.artistResults = new
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                    case.failure(let error):
+                        print(error)
+                    }
+                }
+            }
+            self.pendingRequest = requestWorkItem
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: requestWorkItem)
+        }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+}

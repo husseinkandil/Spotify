@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F6088F5F0BF1CBE883F8C49 /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAB1135F779B579526E6FBA /* libPods-Spotify.a */; };
+		EB0B7D2A283630A000BB70A5 /* ArtistSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B7D29283630A000BB70A5 /* ArtistSearchResponse.swift */; };
+		EB0B7D2E283631B300BB70A5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B7D2D283631B300BB70A5 /* UIView.swift */; };
 		EB6C80F22835341E0067E597 /* SearchViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C80F12835341E0067E597 /* SearchViewcontroller.swift */; };
 		EB6C80F5283534C60067E597 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C80F4283534C60067E597 /* UserResponse.swift */; };
 		EB6C80F9283534EC0067E597 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C80F8283534EC0067E597 /* APIClient.swift */; };
@@ -21,12 +23,18 @@
 		EB9B82A12834FF58004BF102 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B82A02834FF58004BF102 /* WebViewController.swift */; };
 		EB9B82A6283500E4004BF102 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B82A5283500E4004BF102 /* AuthenticationManager.swift */; };
 		EB9B82A828350680004BF102 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B82A728350680004BF102 /* AuthenticationResponse.swift */; };
+		EBB85E8128363A0A006E14C3 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB85E8028363A09006E14C3 /* UICollectionView.swift */; };
+		EBB85E8328364AEE006E14C3 /* ArtistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB85E8228364AEE006E14C3 /* ArtistCollectionViewCell.swift */; };
+		EBB85E8528364DB4006E14C3 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB85E8428364DB4006E14C3 /* PropertyWrapper.swift */; };
+		EBB85E89283667A5006E14C3 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB85E88283667A5006E14C3 /* UICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07EE61C9CD8DB024A84D495A /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 		1A16747BC26E7F8F8498068A /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		5EAB1135F779B579526E6FBA /* libPods-Spotify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0B7D29283630A000BB70A5 /* ArtistSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchResponse.swift; sourceTree = "<group>"; };
+		EB0B7D2D283631B300BB70A5 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EB6C80F12835341E0067E597 /* SearchViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewcontroller.swift; sourceTree = "<group>"; };
 		EB6C80F4283534C60067E597 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		EB6C80F8283534EC0067E597 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -42,6 +50,10 @@
 		EB9B82A02834FF58004BF102 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		EB9B82A5283500E4004BF102 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		EB9B82A728350680004BF102 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
+		EBB85E8028363A09006E14C3 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		EBB85E8228364AEE006E14C3 /* ArtistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBB85E8428364DB4006E14C3 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
+		EBB85E88283667A5006E14C3 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6C80F12835341E0067E597 /* SearchViewcontroller.swift */,
+				EBB85E8228364AEE006E14C3 /* ArtistCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -86,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6C80F4283534C60067E597 /* UserResponse.swift */,
+				EB0B7D29283630A000BB70A5 /* ArtistSearchResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		EB799CCC2834E7CA00BBE10A /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				EBB85E8628366781006E14C3 /* PropertyWrapper */,
 				EB6C80F6283534DD0067E597 /* APICall */,
 				EB799CE52834EB5700BBE10A /* Extensions */,
 				EB799CE22834E8B100BBE10A /* Features */,
@@ -150,6 +165,7 @@
 		EB799CE22834E8B100BBE10A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EBB85E872836679A006E14C3 /* View */,
 				EB6C80EF283533F70067E597 /* ArtistSearch */,
 				EB799CE32834E8B400BBE10A /* Authentication */,
 			);
@@ -179,6 +195,7 @@
 			children = (
 				EB799CE62834EB6000BBE10A /* UIColor.swift */,
 				EB6C80FA283536900067E597 /* UIViewController.swift */,
+				EB0B7D2D283631B300BB70A5 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +207,23 @@
 				EB9B82A728350680004BF102 /* AuthenticationResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EBB85E8628366781006E14C3 /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				EBB85E8428364DB4006E14C3 /* PropertyWrapper.swift */,
+			);
+			path = PropertyWrapper;
+			sourceTree = "<group>";
+		};
+		EBB85E872836679A006E14C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBB85E8028363A09006E14C3 /* UICollectionView.swift */,
+				EBB85E88283667A5006E14C3 /* UICollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,15 +324,21 @@
 			files = (
 				EB799CD22834E7CA00BBE10A /* LoginViewController.swift in Sources */,
 				EB9B82A6283500E4004BF102 /* AuthenticationManager.swift in Sources */,
+				EBB85E8128363A0A006E14C3 /* UICollectionView.swift in Sources */,
+				EBB85E89283667A5006E14C3 /* UICollectionViewCell.swift in Sources */,
 				EB6C80FB283536900067E597 /* UIViewController.swift in Sources */,
 				EB6C80F22835341E0067E597 /* SearchViewcontroller.swift in Sources */,
+				EBB85E8328364AEE006E14C3 /* ArtistCollectionViewCell.swift in Sources */,
 				EB6C80F9283534EC0067E597 /* APIClient.swift in Sources */,
+				EB0B7D2A283630A000BB70A5 /* ArtistSearchResponse.swift in Sources */,
 				EB9B82A828350680004BF102 /* AuthenticationResponse.swift in Sources */,
 				EB799CE72834EB6000BBE10A /* UIColor.swift in Sources */,
 				EB799CCE2834E7CA00BBE10A /* AppDelegate.swift in Sources */,
 				EB9B82A12834FF58004BF102 /* WebViewController.swift in Sources */,
+				EB0B7D2E283631B300BB70A5 /* UIView.swift in Sources */,
 				EB799CD02834E7CA00BBE10A /* SceneDelegate.swift in Sources */,
 				EB6C80F5283534C60067E597 /* UserResponse.swift in Sources */,
+				EBB85E8528364DB4006E14C3 /* PropertyWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
