@@ -2,7 +2,7 @@
 //  AuthenticationManager.swift
 //  Spotify
 //
-//  Created by Hussin Kandil on 18/05/2022.
+//  Created by Hussein Kandil on 18/05/2022.
 //
 
 import UIKit

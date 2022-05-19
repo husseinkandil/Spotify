@@ -17,16 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
 
-//        let navViewController = UINavigationController(rootViewController: LoginViewController())
-//        let isAuthVc = UINavigationController(rootViewController: SearchViewController())
-//
-//        if AuthenticationManager.shared.isSignedIn {
-//            window.rootViewController = isAuthVc
-//        } else {
-//            window.rootViewController = navViewController
-//        }
-        let vc = UINavigationController(rootViewController: LoginViewController())
-        window.rootViewController = vc
+        let navViewController = UINavigationController(rootViewController: LoginViewController())
+        let isAuthVc = UINavigationController(rootViewController: SearchViewController())
+
+        if AuthenticationManager.shared.isSignedIn {
+            window.rootViewController = isAuthVc
+        } else {
+            window.rootViewController = navViewController
+        }
+        
         window.makeKeyAndVisible()
         self.window = window
     }
