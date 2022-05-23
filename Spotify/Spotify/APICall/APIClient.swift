@@ -74,6 +74,28 @@ final class APIClient {
         }
     }
 
+    public func getArtistAlbum(id: String ,completion: @escaping (Result<Album, Error>) -> Void) {
+        createRequest(with: URL(string: Constants.baseUrl+"/artists/\(id)/albums"),
+                      type: .GET) { request in
+
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedFetchingData))
+                    return
+                }
+
+                do {
+                    let result = try JSONDecoder().decode(Album.self, from: data)
+                    completion(.success(result))
+                    print(result)
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+
     private func createRequest(with url: URL?,
                                type: HTTPMethod,
                                completion: @escaping (URLRequest) -> Void) {

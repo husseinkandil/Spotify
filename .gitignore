@@ -20,7 +20,12 @@ dist/
 
 # Package files
 *.jar
-/Users/zeinsmacbook/Desktop/hussein-kandil-training/Spotify/Spotify.xcworkspace/xcuserdata/zeinsmacbook.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata
+
 # Maven
 target/
 dist/

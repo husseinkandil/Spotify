@@ -12,7 +12,7 @@ class ArtistCollectionViewCell: SpotifyCollectionViewCell {
     private let followersLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
-        label.textColor = .gray.withAlphaComponent(0.9)
+        label.textColor = .white.withAlphaComponent(0.7)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .natural
         return label
@@ -103,9 +103,7 @@ class ArtistCollectionViewCell: SpotifyCollectionViewCell {
 
         if let followersNumber = model.followers {
             if let followers = followersNumber.total {
-                let numberFormatter = NumberFormatter()
-                numberFormatter.numberStyle = .decimal
-                self.followersLabel.text = (numberFormatter.string(from: followers as NSNumber))! + " followers"
+                self.followersLabel.text = SpotifyNumberFormatter.formattedNumberOfFollowers(numberOfFollowers: followers) + " followers"
             }
         }
 
