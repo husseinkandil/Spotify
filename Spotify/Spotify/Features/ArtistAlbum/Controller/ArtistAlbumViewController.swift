@@ -97,6 +97,10 @@ class ArtistAlbumViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
 
     private func setupView() {
         defer {
@@ -134,6 +138,14 @@ class ArtistAlbumViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    func openSafari(with data: AlbumResponse) {
+        if let urlString = data.external_urls["spotify"],
+           let url = URL(string: urlString),
+           UIApplication.shared.canOpenURL(url) {
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
+        }
+    }
 }
 
 //MARK: - CollectionView
@@ -152,6 +164,11 @@ extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewD
         cell.populate(model: album)
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let album = albumResult[indexPath.row]
+        openSafari(with: album)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
