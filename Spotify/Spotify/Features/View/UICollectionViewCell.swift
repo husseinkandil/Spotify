@@ -14,6 +14,7 @@ class SpotifyCollectionViewCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .natural
+        label.textColor = .white
         return label
     }()
 
