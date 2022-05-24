@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
             UIColor.systemCyan.cgColor,
             UIColor.black.cgColor
         ]
-        gradient.locations = [0, 1]
+        gradient.locations = [0, 0.75]
         return gradient
     }()
 
@@ -42,19 +42,16 @@ class SearchViewController: UIViewController {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.placeholder = "Search for an artist..."
         searchBar.barStyle = .default
-        searchBar.isTranslucent = false
-        searchBar.backgroundColor = .appGrayTextColor
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
-        searchBar.barTintColor = .appGrayTextColor.withAlphaComponent(0.5)
-        searchBar.searchTextField.textColor = .secondarySystemBackground
+        searchBar.barTintColor = UIColor(red: 0.73, green: 0.80, blue: 0.78, alpha: 1.00)
         return searchBar
     }()
 
     private let noResultLabel: UILabel = {
         let label = UILabel()
         label.text = "No Results"
-        label.textColor = .appGrayTextColor
+        label.textColor = .white.withAlphaComponent(0.7)
         label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .center
         return label
@@ -225,6 +222,16 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         artistData = artistResults[indexPath.item]
         cell.populate(model: artistData)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let selectedArtistId = artistResults[indexPath.item].id,
+           let selectedArtistName = artistResults[indexPath.item].name {
+            let numberOfFollowers = artistResults[indexPath.item].followers?.total
+            let vc = ArtistAlbumViewController(id: selectedArtistId, artistName: selectedArtistName, numberOfFollowers: numberOfFollowers)
+            navigationController?.pushViewController(vc, animated: true)
+            self.userImage.isHidden = true
+        }
     }
 }
 

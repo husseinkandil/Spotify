@@ -51,7 +51,7 @@
 		64D8805F7527163B0A4120C403D97AD2 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2D290A1A63DD5BBCD343790B54DF5A /* IQKeyboardManager.swift */; };
 		652F1768E71D55ED1C4D40E7ABCA11F8 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0B54F3525EAD9610BEC1438E80B95F /* IQUIView+IQKeyboardToolbar.swift */; };
 		65AE44552DF29163E491A2603644B39D /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA497D3CA849D9897D78233E1296DA5 /* FormatIndicatedCacheSerializer.swift */; };
-		67EE283333AD4D7573F767CD94C42A39 /* Pods-Spotify-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D99AC4164954A188BE9CC8A36E66213B /* Pods-Spotify-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		67EE283333AD4D7573F767CD94C42A39 /* Pods-Spotify-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD60D96A58581C0889B23E3C0FC19A57 /* Pods-Spotify-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6907C0CFB5BDD502BB5910EEE790222F /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F318B611A74829009BE8A4FF3BEEF /* RedirectHandler.swift */; };
 		69D9466D3DB3CF9F84AF3125B3532F22 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B0A558D5F7B7D3491AECA6FF7E4C3 /* KFImage.swift */; };
 		6FDA2C4C907A270FD8FCCFDB5E755A84 /* KF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18BE13D978480C63838D18EF479BF28 /* KF.swift */; };
@@ -75,7 +75,7 @@
 		B40410FBED712A1086ADEE307D36F153 /* AuthenticationChallengeResponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A40D5CB83F0EF3A302BF04422021E1 /* AuthenticationChallengeResponsable.swift */; };
 		B439D3280E23E61A19E7D7DEEF6DDBA7 /* ImageBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FF34ED856A953A4CBB4FABB846C97 /* ImageBinder.swift */; };
 		B5DA36EF0DD2C231955777A763058FF2 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55286BBC4842E6EF3886A0FCDAFD9076 /* Storage.swift */; };
-		BB9D8520CCB9B88BA5AFA8824391A7F1 /* Pods-Spotify-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04235B1B1A3281827731B9C227D52B51 /* Pods-Spotify-dummy.m */; };
+		BB9D8520CCB9B88BA5AFA8824391A7F1 /* Pods-Spotify-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F7A6B02DE7B97B3DCD6B0A24AB2298 /* Pods-Spotify-dummy.m */; };
 		BC9B4EE54D72F2455037404FBA19AD37 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB5938D8DE9B2598582F3D44599976 /* IQUIScrollView+Additions.swift */; };
 		BD5DE9137AD611FD04789830CDA7EB55 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B77931F9E71421B31780538375C61 /* IQTitleBarButtonItem.swift */; };
 		BDB2E15EFDD5B92855DF764810AFC902 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A6F221A30012EFB810C83E81FCC2D9 /* Image.swift */; };
@@ -92,10 +92,12 @@
 		D9DB204F4F000A2B83CE7FA5A4751500 /* CPListItem+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E110E5930E46BE5B49F2F8A382739E /* CPListItem+Kingfisher.swift */; };
 		E084647DCFEC510A30A7F982CF0BA302 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFB1DD1FA57946469A4EEDE7B8964D3 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E3C8607A92F519877840704B99857C9D /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8381F8F662D50448E7A6C46BC0A14A2 /* String+MD5.swift */; };
+		EA20B6CA287212CDB45247C767D70EFF /* Pods-Spotify-SpotifyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49473F251036620D81D7883E84DEE73F /* Pods-Spotify-SpotifyTests-dummy.m */; };
 		EEEC8FC20C3BB7AA8160A548271B412C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F286103EE0A5A1CF6170EBCE1659B4 /* Filter.swift */; };
 		EFEB66825259D4016C5A6A14F3A68872 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27465CA0FF6164A765A27B0506DEFA81 /* ImageTransition.swift */; };
 		F414B0BA81FE496166C3245DFEA33D81 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939D854DB364BFE71DDDA6A9C8998951 /* ImageDownloader.swift */; };
 		F679DDFB22B0446466AC8B46B5DDA5EF /* IQKeyboardManager+OrientationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD4F65ACF4CACB0E87837E0DE1F5D6B /* IQKeyboardManager+OrientationNotification.swift */; };
+		F960A97908A0F7E94A60CEFE52AFE18A /* Pods-Spotify-SpotifyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8A724E6EACF34489BCDAFEE5382C133 /* Pods-Spotify-SpotifyTests-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F9B3F3D5AA21A1B475E9E1F1138273B5 /* NSButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8891E4D66E16CF1EB1518E7AF20E3F99 /* NSButton+Kingfisher.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +109,21 @@
 			remoteGlobalIDString = E8022D22FAA6690B5E1C379C1BCE1491;
 			remoteInfo = Kingfisher;
 		};
+		546C8D40FE5BD11498F8AFF6BC83D331 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8022D22FAA6690B5E1C379C1BCE1491;
+			remoteInfo = Kingfisher;
+		};
 		D3F4382B84BB8B81F57F1BD4794F7969 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		E99F27EDE31C56B00D1A871A9E1B758C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -122,12 +138,12 @@
 		021CD7BBEBDB98994B462EFA1302A250 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Utility/Result.swift; sourceTree = "<group>"; };
 		025FB7B765898C1C8402A599BA5C0BD8 /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
 		03A6F221A30012EFB810C83E81FCC2D9 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image/Image.swift; sourceTree = "<group>"; };
-		04235B1B1A3281827731B9C227D52B51 /* Pods-Spotify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spotify-dummy.m"; sourceTree = "<group>"; };
 		05EB5938D8DE9B2598582F3D44599976 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		066450958B05FA1781FC2620EA458BA4 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
 		0860C9C1F17E0AFAD6628AB21011CD93 /* ImageContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageContext.swift; path = Sources/SwiftUI/ImageContext.swift; sourceTree = "<group>"; };
 		0B13653707EED5312D10FDF74F0A5798 /* ImageModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageModifier.swift; path = Sources/Networking/ImageModifier.swift; sourceTree = "<group>"; };
 		0B4231DBB4A7C81F06D942D2805A81E3 /* KingfisherError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherError.swift; path = Sources/General/KingfisherError.swift; sourceTree = "<group>"; };
+		0C3990CC7368CDD5C7CBEAD6ECE1BC75 /* Pods-Spotify-SpotifyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spotify-SpotifyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0FFB1DD1FA57946469A4EEDE7B8964D3 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		110A451FA2F54C70071B0A3FD2184781 /* Kingfisher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.debug.xcconfig; sourceTree = "<group>"; };
 		14DD75B6FCBDBF01CC1BFD1D5172CE82 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/General/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
@@ -139,17 +155,17 @@
 		306F18A0555879DC64180C32DEDB27B7 /* KFOptionsSetter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFOptionsSetter.swift; path = Sources/General/KFOptionsSetter.swift; sourceTree = "<group>"; };
 		32E8323DD8C313964F7C7A4516BA8B07 /* ImageDataProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProcessor.swift; path = Sources/Networking/ImageDataProcessor.swift; sourceTree = "<group>"; };
 		330C50B7CE7A6F231A41D47B8B5D745D /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
-		33834F643D93BD314410C167A809D515 /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
-		360F04B3E71B63F45E393C10422D6C1C /* Pods-Spotify-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spotify-acknowledgements.plist"; sourceTree = "<group>"; };
 		374EC5038D14686B34EDF7DB5736CC69 /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
 		3E6F318B611A74829009BE8A4FF3BEEF /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Sources/Networking/RedirectHandler.swift; sourceTree = "<group>"; };
 		3E7C9A138EE3AF7D5FD3399137A45A08 /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
 		40B3C810FA50F15B68DFF2EBFD874171 /* AVAssetImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AVAssetImageDataProvider.swift; path = Sources/General/ImageSource/AVAssetImageDataProvider.swift; sourceTree = "<group>"; };
+		427E766A503B2130D73DBD342AC7E169 /* Pods-Spotify-SpotifyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Spotify-SpotifyTests.modulemap"; sourceTree = "<group>"; };
 		44B5CB45A95BFF77F5363742C228D137 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
 		44F349A4F5D2A177A1250CC38D1A3C28 /* Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Sources/Utility/Runtime.swift; sourceTree = "<group>"; };
 		450F08D052DF148447B8BD730AB568CF /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		46D73BDC57BAE61048C520B5BD99E3B6 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
 		488BBA62836062264C380F9158CA175F /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
+		49473F251036620D81D7883E84DEE73F /* Pods-Spotify-SpotifyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spotify-SpotifyTests-dummy.m"; sourceTree = "<group>"; };
 		496F9DE2741378F7A837C6EB234E5BE5 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/Image/ImageProcessor.swift; sourceTree = "<group>"; };
 		49F86D525717DA1473763BD0ADC1B126 /* Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delegate.swift; path = Sources/Utility/Delegate.swift; sourceTree = "<group>"; };
 		4AE21285194AE529B3B73611EC389A98 /* ImageDownloaderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloaderDelegate.swift; path = Sources/Networking/ImageDownloaderDelegate.swift; sourceTree = "<group>"; };
@@ -166,16 +182,16 @@
 		634F7C6BC3467C22745DBC0D1E8A83F0 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/General/KingfisherManager.swift; sourceTree = "<group>"; };
 		65399CAB02EDDCD4D88C4F93F751F82C /* WKInterfaceImage+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WKInterfaceImage+Kingfisher.swift"; path = "Sources/Extensions/WKInterfaceImage+Kingfisher.swift"; sourceTree = "<group>"; };
 		6742FE1D56EA3DFD71AB0CC5905170F2 /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
-		6743BEDEE6E3B66B9BD395A2F8D4A5D3 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 		680DFE29241C5E5C71AF667E76F5BACF /* KFImageOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageOptions.swift; path = Sources/SwiftUI/KFImageOptions.swift; sourceTree = "<group>"; };
 		68405C9FAA419D8A4707BE5898C65E24 /* MemoryStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryStorage.swift; path = Sources/Cache/MemoryStorage.swift; sourceTree = "<group>"; };
 		69033C03D871D1E78B912303C4C7B43C /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/General/ImageSource/Resource.swift; sourceTree = "<group>"; };
-		6C8BAAB5E25184F86A0BA34968E93BDA /* Pods-Spotify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Spotify.modulemap"; sourceTree = "<group>"; };
 		6E570239480B976E4CAF240E9507A0FA /* ImageFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFormat.swift; path = Sources/Image/ImageFormat.swift; sourceTree = "<group>"; };
 		7480DCD0F6CE00409A4E3AB486F5C479 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		7953A18768D45A2C7D1E30BA5EBB362C /* GraphicsContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphicsContext.swift; path = Sources/Image/GraphicsContext.swift; sourceTree = "<group>"; };
+		7C77A4DF0E09DDF777A2EBC9FA53FBAB /* Pods-Spotify-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spotify-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7F3C0C1B3F39EFFF3DE43C8CB9493607 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Sources/Cache/DiskStorage.swift; sourceTree = "<group>"; };
 		81B6F98DC9EB38A3AB25E7AAC8477741 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		81F7A6B02DE7B97B3DCD6B0A24AB2298 /* Pods-Spotify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spotify-dummy.m"; sourceTree = "<group>"; };
 		827D3536E0F8F328DE9B964E7F773294 /* ImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProvider.swift; path = Sources/General/ImageSource/ImageDataProvider.swift; sourceTree = "<group>"; };
 		851B0A558D5F7B7D3491AECA6FF7E4C3 /* KFImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImage.swift; path = Sources/SwiftUI/KFImage.swift; sourceTree = "<group>"; };
 		86FD59C8E0CCF92C1EEFFA881972AB88 /* CallbackQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallbackQueue.swift; path = Sources/Utility/CallbackQueue.swift; sourceTree = "<group>"; };
@@ -186,31 +202,39 @@
 		892D4B62FE200E05ACC4DBDB5E9006CB /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		8E221DC60E072BD2B78BEC9A5C3F5713 /* Source.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Source.swift; path = Sources/General/ImageSource/Source.swift; sourceTree = "<group>"; };
 		8F7F8EF55EB2BBED16D985782809D36C /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		90B011980B792EB3466DFA59C7C3171C /* Pods-Spotify-SpotifyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spotify-SpotifyTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		939D854DB364BFE71DDDA6A9C8998951 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Networking/ImageDownloader.swift; sourceTree = "<group>"; };
+		9524AC524F0927E948F70A114E2CCF73 /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		97DFD7435A40FB6C7611C58681006DC8 /* Pods-Spotify */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-Spotify"; path = "libPods-Spotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		988CB5CFFDF616985CF66BA427CBF4E5 /* GIFAnimatedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GIFAnimatedImage.swift; path = Sources/Image/GIFAnimatedImage.swift; sourceTree = "<group>"; };
 		9BA9E717BAA1FCDFF98061169A162AA9 /* RetryStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryStrategy.swift; path = Sources/Networking/RetryStrategy.swift; sourceTree = "<group>"; };
+		9D19C95C5952B960CC121F7070F93D8A /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EE47AA39CF6E6252C3E04F7BB3726A5 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		A0A4B73B11DB5650BA979D80CB50314E /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Views/Indicator.swift; sourceTree = "<group>"; };
+		A53B6EC8118C8AC4BB0BDA65DE877098 /* Pods-Spotify-SpotifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spotify-SpotifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E110E5930E46BE5B49F2F8A382739E /* CPListItem+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CPListItem+Kingfisher.swift"; path = "Sources/Extensions/CPListItem+Kingfisher.swift"; sourceTree = "<group>"; };
 		A8381F8F662D50448E7A6C46BC0A14A2 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/Utility/String+MD5.swift"; sourceTree = "<group>"; };
 		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = IQKeyboardManagerSwift; path = libIQKeyboardManagerSwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90F32F078ACA39E7DC1D03D24298D1 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/Cache/CacheSerializer.swift; sourceTree = "<group>"; };
 		B68519F0AA0E1207CB5E905EF8975D94 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/Extensions/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		B8A724E6EACF34489BCDAFEE5382C133 /* Pods-Spotify-SpotifyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spotify-SpotifyTests-umbrella.h"; sourceTree = "<group>"; };
 		BA6E9961BDAA698B9AC317BE0836F1D7 /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/Views/AnimatedImageView.swift; sourceTree = "<group>"; };
 		BCAEE81732DDBC15EB57646220341725 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		C39E8174DEEAAFFAB78D71568B5348F4 /* KFImageProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageProtocol.swift; path = Sources/SwiftUI/KFImageProtocol.swift; sourceTree = "<group>"; };
+		C3E9646421D8861DBB936F952B41AB16 /* Pods-Spotify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Spotify.modulemap"; sourceTree = "<group>"; };
 		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = Kingfisher; path = libKingfisher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41110749688AE3A7CF54BFA3DE5A839 /* TVMonogramView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TVMonogramView+Kingfisher.swift"; path = "Sources/Extensions/TVMonogramView+Kingfisher.swift"; sourceTree = "<group>"; };
 		CB2FF34ED856A953A4CBB4FABB846C97 /* ImageBinder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageBinder.swift; path = Sources/SwiftUI/ImageBinder.swift; sourceTree = "<group>"; };
 		CCA497D3CA849D9897D78233E1296DA5 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/Cache/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
 		CF1BE956B114BD919DFD571A17E9CBD1 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
+		D00825B50FE3829B44443065AF9B8F7B /* Pods-Spotify-SpotifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spotify-SpotifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		D210F89FB9499BC27E5333F22D87B675 /* KFImageRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageRenderer.swift; path = Sources/SwiftUI/KFImageRenderer.swift; sourceTree = "<group>"; };
 		D390BBA07A1C4E52FF281F62458D30AD /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		D4163360064674905B28A5484D4E0C80 /* Pods-Spotify-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spotify-acknowledgements.plist"; sourceTree = "<group>"; };
 		D8C46142682542327FC9A935E7215EAA /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
-		D99AC4164954A188BE9CC8A36E66213B /* Pods-Spotify-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spotify-umbrella.h"; sourceTree = "<group>"; };
 		DB33D9D39FE68FA4EB099016F4E44D88 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		DCE5A9400DCF4A01B8E4B829C44DF5CF /* Pods-Spotify-SpotifyTests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-Spotify-SpotifyTests"; path = "libPods-Spotify-SpotifyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5EBD26EC3F3FF075A287791885089E /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		E01066715F4663AB32FEB5C54A30D49D /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/Networking/RequestModifier.swift; sourceTree = "<group>"; };
 		E18BE13D978480C63838D18EF479BF28 /* KF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KF.swift; path = Sources/General/KF.swift; sourceTree = "<group>"; };
@@ -219,14 +243,21 @@
 		EB8B77931F9E71421B31780538375C61 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		ED4E89281CA163A74F12908165F7DB46 /* ImageProgressive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProgressive.swift; path = Sources/Image/ImageProgressive.swift; sourceTree = "<group>"; };
 		EF0B54F3525EAD9610BEC1438E80B95F /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
-		F115053F4F6AA0DEC4A37AD5F7B8C902 /* Pods-Spotify-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spotify-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F290E883AC7328030B5A98F5D695664E /* SizeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeExtensions.swift; path = Sources/Utility/SizeExtensions.swift; sourceTree = "<group>"; };
 		F4FC472D043178D4977962A266664111 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		F7AE32C57D194E81F93E5558491C5FB3 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
 		F824CBE30AE731FE3FD4DB07EC5CE7E1 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		FD60D96A58581C0889B23E3C0FC19A57 /* Pods-Spotify-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spotify-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		142417999600739347ABA527FF30B182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		499F21819D1C294377DFA053453E7B9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,12 +282,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02FC9EB0D448E2BFBB7A9FEDE336632D /* Targets Support Files */ = {
+		0AF9EA492511A2D14A66CA814730B989 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				80E9472067815ABA9014EB87C3A31556 /* Pods-Spotify */,
+				9C78B7E55B066C9D7A41BAADEC831EF8 /* Pods-Spotify */,
+				3296AF396F05CFC184424613294A8A14 /* Pods-Spotify-SpotifyTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3296AF396F05CFC184424613294A8A14 /* Pods-Spotify-SpotifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				427E766A503B2130D73DBD342AC7E169 /* Pods-Spotify-SpotifyTests.modulemap */,
+				0C3990CC7368CDD5C7CBEAD6ECE1BC75 /* Pods-Spotify-SpotifyTests-acknowledgements.markdown */,
+				90B011980B792EB3466DFA59C7C3171C /* Pods-Spotify-SpotifyTests-acknowledgements.plist */,
+				49473F251036620D81D7883E84DEE73F /* Pods-Spotify-SpotifyTests-dummy.m */,
+				B8A724E6EACF34489BCDAFEE5382C133 /* Pods-Spotify-SpotifyTests-umbrella.h */,
+				A53B6EC8118C8AC4BB0BDA65DE877098 /* Pods-Spotify-SpotifyTests.debug.xcconfig */,
+				D00825B50FE3829B44443065AF9B8F7B /* Pods-Spotify-SpotifyTests.release.xcconfig */,
+			);
+			name = "Pods-Spotify-SpotifyTests";
+			path = "Target Support Files/Pods-Spotify-SpotifyTests";
 			sourceTree = "<group>";
 		};
 		48D6B00B3DF5182DA61E1B04F951F596 /* Kingfisher */ = {
@@ -329,26 +376,27 @@
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
-		79B1B08253ABE4830994B4DF32F831DA /* Products */ = {
+		908CF65F64970339742596CDFF5150EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
 				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
 				97DFD7435A40FB6C7611C58681006DC8 /* Pods-Spotify */,
+				DCE5A9400DCF4A01B8E4B829C44DF5CF /* Pods-Spotify-SpotifyTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80E9472067815ABA9014EB87C3A31556 /* Pods-Spotify */ = {
+		9C78B7E55B066C9D7A41BAADEC831EF8 /* Pods-Spotify */ = {
 			isa = PBXGroup;
 			children = (
-				6C8BAAB5E25184F86A0BA34968E93BDA /* Pods-Spotify.modulemap */,
-				F115053F4F6AA0DEC4A37AD5F7B8C902 /* Pods-Spotify-acknowledgements.markdown */,
-				360F04B3E71B63F45E393C10422D6C1C /* Pods-Spotify-acknowledgements.plist */,
-				04235B1B1A3281827731B9C227D52B51 /* Pods-Spotify-dummy.m */,
-				D99AC4164954A188BE9CC8A36E66213B /* Pods-Spotify-umbrella.h */,
-				33834F643D93BD314410C167A809D515 /* Pods-Spotify.debug.xcconfig */,
-				6743BEDEE6E3B66B9BD395A2F8D4A5D3 /* Pods-Spotify.release.xcconfig */,
+				C3E9646421D8861DBB936F952B41AB16 /* Pods-Spotify.modulemap */,
+				7C77A4DF0E09DDF777A2EBC9FA53FBAB /* Pods-Spotify-acknowledgements.markdown */,
+				D4163360064674905B28A5484D4E0C80 /* Pods-Spotify-acknowledgements.plist */,
+				81F7A6B02DE7B97B3DCD6B0A24AB2298 /* Pods-Spotify-dummy.m */,
+				FD60D96A58581C0889B23E3C0FC19A57 /* Pods-Spotify-umbrella.h */,
+				9524AC524F0927E948F70A114E2CCF73 /* Pods-Spotify.debug.xcconfig */,
+				9D19C95C5952B960CC121F7070F93D8A /* Pods-Spotify.release.xcconfig */,
 			);
 			name = "Pods-Spotify";
 			path = "Target Support Files/Pods-Spotify";
@@ -406,8 +454,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				EDE337AE3FB725FA3141A89EAE148255 /* Pods */,
-				79B1B08253ABE4830994B4DF32F831DA /* Products */,
-				02FC9EB0D448E2BFBB7A9FEDE336632D /* Targets Support Files */,
+				908CF65F64970339742596CDFF5150EF /* Products */,
+				0AF9EA492511A2D14A66CA814730B989 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -468,6 +516,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D57CEDD260237789C20979189EDBEE5A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F960A97908A0F7E94A60CEFE52AFE18A /* Pods-Spotify-SpotifyTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +564,25 @@
 			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */;
 			productType = "com.apple.product-type.library.static";
 		};
+		DB5E77593D142B1ECD1AE42DFEF0F870 /* Pods-Spotify-SpotifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 232941760FF97D7894E6DF9B22944FF7 /* Build configuration list for PBXNativeTarget "Pods-Spotify-SpotifyTests" */;
+			buildPhases = (
+				D57CEDD260237789C20979189EDBEE5A /* Headers */,
+				E42603125DE9FAB22E9A61B87BB3A59B /* Sources */,
+				142417999600739347ABA527FF30B182 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F212C81543A77019BA9FD16565EA3E86 /* PBXTargetDependency */,
+				73BD8693739BBB290D77117D55F7F89D /* PBXTargetDependency */,
+			);
+			name = "Pods-Spotify-SpotifyTests";
+			productName = "Pods-Spotify-SpotifyTests";
+			productReference = DCE5A9400DCF4A01B8E4B829C44DF5CF /* Pods-Spotify-SpotifyTests */;
+			productType = "com.apple.product-type.library.static";
+		};
 		E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF32D064154D7E923833E85A3B44C53D /* Build configuration list for PBXNativeTarget "Kingfisher" */;
@@ -544,13 +619,14 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 79B1B08253ABE4830994B4DF32F831DA /* Products */;
+			productRefGroup = 908CF65F64970339742596CDFF5150EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */,
 				E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */,
 				329161CB25D509AB980F6AF24CA7547D /* Pods-Spotify */,
+				DB5E77593D142B1ECD1AE42DFEF0F870 /* Pods-Spotify-SpotifyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -684,6 +760,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E42603125DE9FAB22E9A61B87BB3A59B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA20B6CA287212CDB45247C767D70EFF /* Pods-Spotify-SpotifyTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F121F9D88EEB7CC5CDC5CBE4B7E8EFE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -718,11 +802,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		73BD8693739BBB290D77117D55F7F89D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kingfisher;
+			target = E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */;
+			targetProxy = 546C8D40FE5BD11498F8AFF6BC83D331 /* PBXContainerItemProxy */;
+		};
 		9DEA671CAB668714BC083A620FA54FBB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Kingfisher;
 			target = E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */;
 			targetProxy = 471DE64B935D93E7EA57810BBC8096DF /* PBXContainerItemProxy */;
+		};
+		F212C81543A77019BA9FD16565EA3E86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = E99F27EDE31C56B00D1A871A9E1B758C /* PBXContainerItemProxy */;
 		};
 		F7CADB6AAD779E170AC62E892BB932F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -733,6 +829,51 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		49E71D49A8E90C62364F93A78B0A9AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D00825B50FE3829B44443065AF9B8F7B /* Pods-Spotify-SpotifyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		817753814CEE8845CECE42FBEA453508 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A53B6EC8118C8AC4BB0BDA65DE877098 /* Pods-Spotify-SpotifyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		8FFB19608B05E0EA4E35BD211C6FBCC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110A451FA2F54C70071B0A3FD2184781 /* Kingfisher.debug.xcconfig */;
@@ -939,7 +1080,7 @@
 		};
 		AB614C944C241D15ED6C0F8D6047C168 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33834F643D93BD314410C167A809D515 /* Pods-Spotify.debug.xcconfig */;
+			baseConfigurationReference = 9524AC524F0927E948F70A114E2CCF73 /* Pods-Spotify.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -961,7 +1102,7 @@
 		};
 		B44403AB9E9EA04F7AE448D68408B190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6743BEDEE6E3B66B9BD395A2F8D4A5D3 /* Pods-Spotify.release.xcconfig */;
+			baseConfigurationReference = 9D19C95C5952B960CC121F7070F93D8A /* Pods-Spotify.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1009,6 +1150,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		232941760FF97D7894E6DF9B22944FF7 /* Build configuration list for PBXNativeTarget "Pods-Spotify-SpotifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				817753814CEE8845CECE42FBEA453508 /* Debug */,
+				49E71D49A8E90C62364F93A78B0A9AA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
