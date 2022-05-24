@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
         let gradient = CAGradientLayer()
         gradient.type = .axial
         gradient.colors = [
-            UIColor.systemCyan.cgColor,
+            UIColor(red: 0.32, green: 0.61, blue: 0.80, alpha: 1.00).cgColor,
             UIColor.black.cgColor
         ]
         gradient.locations = [0, 0.75]
