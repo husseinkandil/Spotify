@@ -18,8 +18,8 @@ struct ArtistsResponse: Codable {
 
 struct Artist: Codable {
     var images: [ImageResponse]?
-    let name: String?
-    let id: String?
+    let name: String
+    let id: String
     let popularity: Int?
     let followers: Followers?
 }

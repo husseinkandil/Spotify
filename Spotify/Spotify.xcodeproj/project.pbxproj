@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F6088F5F0BF1CBE883F8C49 /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAB1135F779B579526E6FBA /* libPods-Spotify.a */; };
+		9ED5C2B3283E3370003D18B4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5C2B2283E3370003D18B4 /* SearchViewModel.swift */; };
+		9EDBF825283E1C4300E32FF9 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDBF824283E1C4300E32FF9 /* AlbumViewModel.swift */; };
 		EB0B7D2A283630A000BB70A5 /* ArtistSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B7D29283630A000BB70A5 /* ArtistSearchResponse.swift */; };
 		EB0B7D2E283631B300BB70A5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B7D2D283631B300BB70A5 /* UIView.swift */; };
 		EB2F892D28377F8E00095F3E /* ArtistalbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F892C28377F8E00095F3E /* ArtistalbumResponse.swift */; };
@@ -50,6 +52,8 @@
 		07EE61C9CD8DB024A84D495A /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 		1A16747BC26E7F8F8498068A /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		5EAB1135F779B579526E6FBA /* libPods-Spotify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED5C2B2283E3370003D18B4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		9EDBF824283E1C4300E32FF9 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		E393BBB5E8A08B5517F0E9A4 /* Pods-Spotify-SpotifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify-SpotifyTests.release.xcconfig"; path = "Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C287AAE2521818D4C66E8C /* libPods-Spotify-SpotifyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify-SpotifyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E77A176F77DE6A12010C3F /* Pods-Spotify-SpotifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify-SpotifyTests.debug.xcconfig"; path = "Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,9 +118,44 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9ED5C2B0283E3357003D18B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9ED5C2B2283E3370003D18B4 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9ED5C2B1283E335E003D18B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBB85E8228364AEE006E14C3 /* ArtistCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9EDBF822283E1C2400E32FF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EDBF824283E1C4300E32FF9 /* AlbumViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9EDBF823283E1C2B00E32FF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB2F89302837800B00095F3E /* ArtistAlbumCollectionViewCell.swift */,
+				EB2F89342837D9CB00095F3E /* StretchyCollectionViewHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EB2F892928377ED300095F3E /* ArtistAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				9EDBF823283E1C2B00E32FF9 /* View */,
+				9EDBF822283E1C2400E32FF9 /* ViewModel */,
 				EB2F892B28377EF200095F3E /* Model */,
 				EB2F892A28377EEA00095F3E /* Controller */,
 			);
@@ -127,8 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				EB2F892E28377FD900095F3E /* ArtistAlbumViewController.swift */,
-				EB2F89302837800B00095F3E /* ArtistAlbumCollectionViewCell.swift */,
-				EB2F89342837D9CB00095F3E /* StretchyCollectionViewHeader.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +181,8 @@
 		EB6C80EF283533F70067E597 /* ArtistSearch */ = {
 			isa = PBXGroup;
 			children = (
+				9ED5C2B1283E335E003D18B4 /* View */,
+				9ED5C2B0283E3357003D18B4 /* ViewModel */,
 				EB6C80F32835349B0067E597 /* Model */,
 				EB6C80F02835340B0067E597 /* Controller */,
 			);
@@ -154,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				EB6C80F12835341E0067E597 /* SearchViewcontroller.swift */,
-				EBB85E8228364AEE006E14C3 /* ArtistCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,6 +510,7 @@
 				EB2F892F28377FD900095F3E /* ArtistAlbumViewController.swift in Sources */,
 				EB9B82A6283500E4004BF102 /* AuthenticationManager.swift in Sources */,
 				EBB85E8128363A0A006E14C3 /* UICollectionView.swift in Sources */,
+				9EDBF825283E1C4300E32FF9 /* AlbumViewModel.swift in Sources */,
 				EB2F892D28377F8E00095F3E /* ArtistalbumResponse.swift in Sources */,
 				EB2F89312837800B00095F3E /* ArtistAlbumCollectionViewCell.swift in Sources */,
 				EBB85E89283667A5006E14C3 /* UICollectionViewCell.swift in Sources */,
@@ -485,6 +524,7 @@
 				EB799CCE2834E7CA00BBE10A /* AppDelegate.swift in Sources */,
 				EB9B82A12834FF58004BF102 /* WebViewController.swift in Sources */,
 				EB0B7D2E283631B300BB70A5 /* UIView.swift in Sources */,
+				9ED5C2B3283E3370003D18B4 /* SearchViewModel.swift in Sources */,
 				EB77066F283C2A4C0066B5A1 /* NumberFormatter.swift in Sources */,
 				EB799CD02834E7CA00BBE10A /* SceneDelegate.swift in Sources */,
 				EB6C80F5283534C60067E597 /* UserResponse.swift in Sources */,

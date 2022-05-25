@@ -225,13 +225,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedArtistId = artistResults[indexPath.item].id,
-           let selectedArtistName = artistResults[indexPath.item].name {
-            let numberOfFollowers = artistResults[indexPath.item].followers?.total
-            let vc = ArtistAlbumViewController(id: selectedArtistId, artistName: selectedArtistName, numberOfFollowers: numberOfFollowers)
+        
+        let artist = artistResults[ indexPath.item]
+        let viewModel = AlbumViewModel(artist: artist)
+        let vc = ArtistAlbumViewController(with: viewModel)
             navigationController?.pushViewController(vc, animated: true)
             self.userImage.isHidden = true
-        }
     }
 }
 

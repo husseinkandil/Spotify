@@ -77,12 +77,11 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
         ])
     }
 
-    func populate(model: AlbumResponse, numberOfFollowers: String) {
-        self.followersLabel.text = numberOfFollowers
-        if let artistName = model.artists.first?.name {
-            label.text = artistName
-        }
-        guard let url = model.images?.first?.url else { return }
+    func populate(model: AlbumHeaderModel) {
+        
+        followersLabel.text = model.followersLabelText
+        label.text = model.artistName
+        guard let url = model.artistImageUrl else { return }
         downloadImage(url: url)
     }
 
