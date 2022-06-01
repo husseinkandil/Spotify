@@ -8,6 +8,8 @@
 import UIKit
 import SafariServices
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class ArtistAlbumViewController: UIViewController {
 
@@ -61,10 +63,18 @@ class ArtistAlbumViewController: UIViewController {
         return button
     }()
 
-    required init(id: String, artistName: String, numberOfFollowers: Int?) {
-        self.id = id
-        self.artistName = artistName
-        self.numberOfFollowers = numberOfFollowers
+//    required init(id: String, artistName: String, numberOfFollowers: Int?) {
+//        self.id = id
+//        self.artistName = artistName
+//        self.numberOfFollowers = numberOfFollowers
+//        super.init(nibName: nil, bundle: nil)
+//    }
+    
+    private let viewModel: AlbumViewModelProtocol
+    private let disposeBag = DisposeBag()
+    
+    init(with ViewModel: AlbumViewModelProtocol) {
+        self.viewModel = ViewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -78,6 +88,7 @@ class ArtistAlbumViewController: UIViewController {
         gradient.frame = view.bounds
         view.layer.addSublayer(gradient)
         setupView()
+        activateBindings()
         guard let id = self.id else { return }
 
         APIClient.shared.getArtistAlbum(id: id) { [weak self] result in
@@ -138,13 +149,46 @@ class ArtistAlbumViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-    func openSafari(with data: AlbumResponse) {
-        if let urlString = data.external_urls["spotify"],
-           let url = URL(string: urlString),
-           UIApplication.shared.canOpenURL(url) {
-            let vc = SFSafariViewController(url: url)
-            present(vc, animated: true)
-        }
+    func openSafari(with url: URL) {
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+    
+    private func activateBindings() {
+        viewModel
+            .isLoading
+            .observe(on: MainScheduler.instance)
+            .bind { isLoading in
+                if isLoading {
+                    print("Loading started")
+                } else {
+                    print("Loading finished")
+                }
+            }.disposed(by: disposeBag)
+        
+        viewModel
+            .onError
+            .withUnretained(self)
+            .observe(on: MainScheduler.instance)
+            .bind { strongSelf, error in
+                strongSelf.showAlert(with: error)
+            }.disposed(by: disposeBag)
+        
+        viewModel
+            .openUrl
+            .withUnretained(self)
+            .observe(on: MainScheduler.instance)
+            .bind { strongSelf, url in
+                strongSelf.openSafari(with: url)
+            }.disposed(by: disposeBag)
+        
+        viewModel
+            .reload
+            .withUnretained(self)
+            .observe(on: MainScheduler.instance)
+            .bind { strongSelf, _ in
+                strongSelf.collectionView.reloadData()
+            }.disposed(by: disposeBag)
     }
 }
 
@@ -153,22 +197,18 @@ class ArtistAlbumViewController: UIViewController {
 extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albumResult.count
+        viewModel.numberOfItems
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistAlbumCollectionViewCell.identifier, for: indexPath) as! ArtistAlbumCollectionViewCell
 
-        let album: AlbumResponse
-        album = albumResult[indexPath.item]
-        cell.populate(model: album)
-
+        cell.populate(model: viewModel.album(at: indexPath.row))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let album = albumResult[indexPath.row]
-        openSafari(with: album)
+        viewModel.didSelectAlbum(at: indexPath.row)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -176,21 +216,17 @@ extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewD
             ofKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: StretchyCollectionHeaderView.identifier,
             for: indexPath) as? StretchyCollectionHeaderView {
-            if albumResult.indices.contains(indexPath.item) {
-                let album = albumResult[indexPath.row]
-                let numberOfFollowersString: String
-                if let numberOfFollowers = numberOfFollowers {
-                    let formattedNumber = SpotifyNumberFormatter.formattedNumberOfFollowers(numberOfFollowers: numberOfFollowers)
-                    numberOfFollowersString = "\(formattedNumber) followers"
-                } else {
-                    numberOfFollowersString = "-- followers"
-                }
-
-                headerView.populate(model: album, numberOfFollowers: numberOfFollowersString)
-            }
-
+            
+            viewModel
+                .headerModel
+                .observe(on: MainScheduler.instance)
+                .bind { model in
+                    guard let model = model else { return }
+                    headerView.populate(model: model)
+                }.disposed(by: disposeBag)
+            
             return headerView
-    }
+        }
         return UICollectionReusableView()
     }
 }
