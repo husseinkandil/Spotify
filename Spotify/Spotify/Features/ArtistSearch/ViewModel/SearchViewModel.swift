@@ -14,6 +14,7 @@ import Kingfisher
 struct SignedinUserProfile {
     let image: String
     let username: String
+    let id: String
 }
 
 protocol SearchViewModelProtocol: AnyObject {
@@ -54,13 +55,11 @@ final class SearchViewModel: SearchViewModelProtocol {
     }
     
     var userName: String {
-        guard let username = UserDefaults.standard.value(forKey: "userName") as? String else { return ""}
-        return username
+        user.username
     }
     
     private var profileImageUrl: String {
-        guard let imageUrl = UserDefaults.standard.value(forKey: "image") as? String else { return ""}
-        return imageUrl
+        user.image
     }
     
     var disposedBag = DisposeBag()

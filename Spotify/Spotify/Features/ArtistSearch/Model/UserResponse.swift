@@ -6,9 +6,9 @@
 //
 
 struct UserProfile: Codable {
-    let country: String
+    let country: String?
     let display_name: String
-    let external_urls: [String: String]
+    let external_urls: [String: String]?
     let id: String
     let images: [ImageResponse]
 }

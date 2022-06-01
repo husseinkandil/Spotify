@@ -206,6 +206,7 @@ class SearchViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Log out", style: .default, handler: { [weak self] action in
             guard let self = self else { return }
+            
             self.viewModel.signout()
         }))
         
@@ -222,7 +223,9 @@ class SearchViewController: UIViewController {
             guard let self = self else { return }
             
             self.userImage.isHidden = true
-            self.navigationController?.pushViewController(LoginViewController(), animated: true)
+            
+            let viewModel = LoginViewModel()
+            self.navigationController?.pushViewController(LoginViewController(viewModel: viewModel), animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "No", style: .cancel))
