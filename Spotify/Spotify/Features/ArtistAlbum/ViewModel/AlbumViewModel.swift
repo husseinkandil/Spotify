@@ -34,11 +34,11 @@ final class AlbumViewModel: AlbumViewModelProtocol {
     let openUrl: PublishRelay<URL> = .init()
     let headerModel: BehaviorRelay<AlbumHeaderModel?> = .init(value: nil)
     
-    var artis: Artist
+    var artist: Artist
     var album: Album?
     
     var artistId: String {
-        artis.id
+        artist.id
     }
     
     var numberOfItems: Int {
@@ -47,7 +47,7 @@ final class AlbumViewModel: AlbumViewModelProtocol {
     }
     
     init(artist: Artist) {
-        self.artis = artist
+        self.artist = artist
         getArtistAlbum()
         generateHeaderModel()
     }
@@ -80,12 +80,12 @@ final class AlbumViewModel: AlbumViewModelProtocol {
     
     private func generateHeaderModel() {
         var numberOfFollowersText = "-- followers"
-        if let numberOfFollowers = artis.followers?.total {
+        if let numberOfFollowers = artist.followers?.total {
             let formatted = SpotifyNumberFormatter.formattedNumberOfFollowers(numberOfFollowers: numberOfFollowers)
             numberOfFollowersText = "\(formatted) followers"
         }
-        let artistName = artis.name
-        let artistImageUrl = artis.images?.first?.url
+        let artistName = artist.name
+        let artistImageUrl = artist.images?.first?.url
         
         let headerModel = AlbumHeaderModel(followersLabelText: numberOfFollowersText,
                                            artistName: artistName,

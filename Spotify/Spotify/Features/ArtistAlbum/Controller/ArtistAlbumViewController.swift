@@ -62,13 +62,6 @@ class ArtistAlbumViewController: UIViewController {
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return button
     }()
-
-//    required init(id: String, artistName: String, numberOfFollowers: Int?) {
-//        self.id = id
-//        self.artistName = artistName
-//        self.numberOfFollowers = numberOfFollowers
-//        super.init(nibName: nil, bundle: nil)
-//    }
     
     private let viewModel: AlbumViewModelProtocol
     private let disposeBag = DisposeBag()
@@ -89,20 +82,7 @@ class ArtistAlbumViewController: UIViewController {
         view.layer.addSublayer(gradient)
         setupView()
         activateBindings()
-        guard let id = self.id else { return }
-
-        APIClient.shared.getArtistAlbum(id: id) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case.success(let model):
-                self.albumResult = model.items
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            case.failure(let error):
-                print(error)
-            }
-        }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {

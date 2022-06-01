@@ -79,14 +79,34 @@ class LoginViewController: UIViewController {
     }
 
     private func handleSignin(success: Bool) {
+        var username: String = ""
+        var image: String = ""
         guard success else {
             let alert = UIAlertController.init(title: "Error", message: "Error while signing in.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel))
             present(alert, animated: true)
             return
         }
-
-        let vc = SearchViewController()
+        
+        APIClient.shared.getUserProfile { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case.failure(let error):
+                self.showAlert(with: error)
+            case.success(let user):
+                username = user.display_name
+                image = user.images.first?.url ?? ""
+                
+                UserDefaults.standard.set(username, forKey: "userName")
+                UserDefaults.standard.set(image, forKey: "image")
+                print(user)
+            }
+        }
+        
+        let userProfile = SignedinUserProfile(image: image, username: username)
+        let viewModel = SearchViewModel(user: userProfile)
+        let vc = SearchViewController(viewModel: viewModel)
         vc.navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.pushViewController(vc, animated: true)
     }
