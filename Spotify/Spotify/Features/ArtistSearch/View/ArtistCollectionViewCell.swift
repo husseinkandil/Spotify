@@ -98,7 +98,6 @@ class ArtistCollectionViewCell: SpotifyCollectionViewCell {
 
     func populate(model: Artist) {
         self.nameLabel.text = model.name
-        
 
         if let followersNumber = model.followers {
             if let followers = followersNumber.total {
