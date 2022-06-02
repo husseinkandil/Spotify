@@ -16,27 +16,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
+        let loginViewModel = LoginViewModel()
         
         if AuthenticationManager.shared.isSignedIn {
             
-            if let username = UserDefaults.standard.value(forKey: "userName") as? String,
-               let image = UserDefaults.standard.value(forKey: "image") as? String  {
-                let user = SignedinUserProfile(image: image, username: username)
-                let viewModel = SearchViewModel(user: user)
-                let isAuthVc = UINavigationController(rootViewController: SearchViewController(viewModel: viewModel))
-                window.makeKeyAndVisible()
-                self.window = window
-                window.rootViewController = isAuthVc
-            }
-        } else {
             
-            let navViewController = UINavigationController(rootViewController: LoginViewController())
-            window.rootViewController = navViewController
+            let username =  loginViewModel.username
+            let image = loginViewModel.image
+            let id = loginViewModel.id
             
-            
+            let user = SignedinUserProfile(image: image, username: username, id: id)
+            let viewModel = SearchViewModel(user: user)
+            let isAuthVc = UINavigationController(rootViewController: SearchViewController(viewModel: viewModel))
             window.makeKeyAndVisible()
             self.window = window
+            window.rootViewController = isAuthVc
         }
+        
+        let navViewController = UINavigationController(rootViewController: LoginViewController(viewModel: loginViewModel))
+        window.rootViewController = navViewController
+        
+        
+        window.makeKeyAndVisible()
+        self.window = window
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
