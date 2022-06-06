@@ -11,9 +11,6 @@ import RxSwift
 
 class WebViewController: UIViewController {
 
-//    public var completion: ((Bool) -> Void)?
-//    private let dispoedBag = DisposeBag()
-
     private let webView: WKWebView = {
         let prefs = WKWebpagePreferences()
         if #available(iOS 14.0, *) {
@@ -43,10 +40,7 @@ class WebViewController: UIViewController {
         webView.navigationDelegate = self
         view.addSubview(webView)
 
-        #warning("dont forget to get url from viewModel")
-        guard let url = AuthenticationManager.shared.signinURL else { return }
-
-        webView.load(URLRequest(url: url))
+        webView.load(URLRequest(url: viewModel.signinUrl))
 
     }
 
@@ -54,7 +48,6 @@ class WebViewController: UIViewController {
         super.viewDidLayoutSubviews()
         webView.frame = view.bounds
     }
-
 }
 
 //MARK: - Navigation Delegate

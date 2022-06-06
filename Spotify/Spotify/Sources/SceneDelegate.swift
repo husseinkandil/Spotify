@@ -18,12 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = windowScene
         let loginViewModel = LoginViewModel()
         
-        if AuthenticationManager.shared.isSignedIn {
+        if AuthenticationManager.shared.isSignedIn,
+           let user = AuthenticationManager.shared.getUser() {
             
-            
-            let username =  loginViewModel.username
-            let image = loginViewModel.image
-            let id = loginViewModel.id
+            let username =  user.display_name
+            let image = user.images.first?.url
+            let id = user.id
             
             let user = SignedinUserProfile(image: image, username: username, id: id)
             let viewModel = SearchViewModel(user: user)
@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
             self.window = window
             window.rootViewController = isAuthVc
-        }
+        } else {
         
         let navViewController = UINavigationController(rootViewController: LoginViewController(viewModel: loginViewModel))
         window.rootViewController = navViewController
@@ -39,6 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window.makeKeyAndVisible()
         self.window = window
+        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
