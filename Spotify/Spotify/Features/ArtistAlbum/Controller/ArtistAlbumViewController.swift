@@ -22,7 +22,7 @@ class ArtistAlbumViewController: UIViewController {
     private lazy var collectionView: SpotifyCollectionView = {
         let flowLayout = CollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: 320)
+        flowLayout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: view.frame.height / 2 - 120)
         flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
 
         let collectionView = SpotifyCollectionView(frame: view.frame, layout: flowLayout)
@@ -77,7 +77,7 @@ class ArtistAlbumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
         gradient.frame = view.bounds
         view.layer.addSublayer(gradient)
         setupView()
@@ -87,10 +87,12 @@ class ArtistAlbumViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        backButtonImageView.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
+        backButtonImageView.isHidden = true
     }
 
     private func setupView() {
@@ -98,24 +100,12 @@ class ArtistAlbumViewController: UIViewController {
             setupConstraints()
         }
         view.addSubview(collectionView)
-        view.addSubview(backButtonImageView)
-        backButtonImageView.addSubview(backButton)
     }
 
     private func setupConstraints() {
+        
         NSLayoutConstraint.activate([
-
-            backButtonImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            backButtonImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            backButtonImageView.widthAnchor.constraint(equalToConstant: 50),
-            backButtonImageView.heightAnchor.constraint(equalTo: backButtonImageView.widthAnchor),
-
-            backButton.topAnchor.constraint(equalTo: backButtonImageView.topAnchor),
-            backButton.bottomAnchor.constraint(equalTo: backButtonImageView.bottomAnchor),
-            backButton.leadingAnchor.constraint(equalTo: backButtonImageView.leadingAnchor),
-            backButton.trailingAnchor.constraint(equalTo: backButtonImageView.trailingAnchor),
-
-
+            
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -209,7 +199,50 @@ extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewD
         }
         return UICollectionReusableView()
     }
+    
+    func collectionView(_ collectionView: UICollectionView
+                        , didEndDisplayingSupplementaryView view: UICollectionReusableView
+                        , forElementOfKind elementKind: String
+                        , at indexPath: IndexPath) {
+        
+        navigationController?.navigationBar.isHidden = false
+//        backButtonImageView.isHidden = true
+        let navigation = navigationController?.navigationBar
+        guard let navigation = navigation else { return }
+        navigationController?.navigationBar.addSubview(backButtonImageView)
+        NSLayoutConstraint.activate([
+            backButtonImageView.topAnchor.constraint(equalTo: navigation.topAnchor, constant: -5),
+            backButtonImageView.leadingAnchor.constraint(equalTo: navigation.leadingAnchor, constant: 5),
+            backButtonImageView.bottomAnchor.constraint(equalTo: navigation.bottomAnchor, constant: -2),
+            backButtonImageView.widthAnchor.constraint(equalTo: backButtonImageView.heightAnchor)
+        ])
+        backButtonImageView.tintColor = .black.withAlphaComponent(0.3)
+        title = viewModel.artistName
+    }
+
+    func collectionView(_ collectionView: UICollectionView
+                        , willDisplaySupplementaryView view: UICollectionReusableView
+                        , forElementKind elementKind: String
+                        , at indexPath: IndexPath) {
+        navigationController?.navigationBar.isHidden = true
+        self.view.addSubview(backButtonImageView)
+        backButtonImageView.addSubview(backButton)
+        
+        NSLayoutConstraint.activate([
+            backButtonImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            backButtonImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            backButtonImageView.widthAnchor.constraint(equalToConstant: 50),
+            backButtonImageView.heightAnchor.constraint(equalTo: backButtonImageView.widthAnchor),
+
+            backButton.topAnchor.constraint(equalTo: backButtonImageView.topAnchor),
+            backButton.bottomAnchor.constraint(equalTo: backButtonImageView.bottomAnchor),
+            backButton.leadingAnchor.constraint(equalTo: backButtonImageView.leadingAnchor),
+            backButton.trailingAnchor.constraint(equalTo: backButtonImageView.trailingAnchor),
+        ])
+        backButtonImageView.tintColor = .white.withAlphaComponent(0.1)
+    }
 }
+
 
 extension ArtistAlbumViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

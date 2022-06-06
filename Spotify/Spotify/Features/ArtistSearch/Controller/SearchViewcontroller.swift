@@ -57,7 +57,7 @@ class SearchViewController: UIViewController {
     private lazy var collectionView: SpotifyCollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: 260)
+        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: view.frame.height / 4 + 50)
         
         let collectionView = SpotifyCollectionView(frame: view.frame, layout: layout)
         collectionView.register(ArtistCollectionViewCell.self, forCellWithReuseIdentifier: ArtistCollectionViewCell.identifier)
@@ -272,11 +272,11 @@ extension SearchViewController: UISearchBarDelegate {
             collectionView.backgroundView = noResultLabel
             viewModel.artistArray = []
             collectionView.reloadData()
+            
         } else {
             
             self.collectionView.isHidden = false
             self.collectionView.backgroundView = nil
-            
             self.viewModel
                 .searchText
                 .accept(text)

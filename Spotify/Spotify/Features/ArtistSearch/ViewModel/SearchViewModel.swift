@@ -12,7 +12,7 @@ import Kingfisher
 
 
 struct SignedinUserProfile {
-    let image: String
+    let image: String?
     let username: String
     let id: String
 }
@@ -25,6 +25,7 @@ protocol SearchViewModelProtocol: AnyObject {
     var profileImage: BehaviorRelay<UIImage?> { get }
     var searchText: PublishRelay<String> { get }
     var isSignedOut: PublishRelay<Void> { get }
+    var emptyText:PublishRelay<String> { get }
       
     var numberOfItems: Int { get }
     var userName: String { get }
@@ -44,6 +45,7 @@ final class SearchViewModel: SearchViewModelProtocol {
     let profileImage: BehaviorRelay<UIImage?> = .init(value: nil)
     let searchText: PublishRelay<String> = .init()
     let isSignedOut: PublishRelay<Void> = .init()
+    let emptyText:PublishRelay<String> = .init()
     
     var user: SignedinUserProfile
     var artist: ArtistsResponse?
@@ -58,7 +60,7 @@ final class SearchViewModel: SearchViewModelProtocol {
         user.username
     }
     
-    private var profileImageUrl: String {
+    private var profileImageUrl: String? {
         user.image
     }
     
@@ -74,7 +76,8 @@ final class SearchViewModel: SearchViewModelProtocol {
                 strongSelf.getArtists(text: text)
             }.disposed(by: disposedBag)
         
-        if let imageUrl = URL(string: profileImageUrl) {
+        if let profileImageUrl = profileImageUrl,
+           let imageUrl = URL(string: profileImageUrl) {
             KingfisherManager.shared.retrieveImage(with: imageUrl) { [weak self] result in
                 guard let self = self else { return }
                 
@@ -114,8 +117,7 @@ final class SearchViewModel: SearchViewModelProtocol {
                 guard let self = self else { return }
                 
                 if success {
-                    UserDefaults.standard.set(nil, forKey: "userName")
-                    UserDefaults.standard.set(nil, forKey: "image")
+                    AuthenticationManager.shared.clearUser()
                     self.isSignedOut.accept(())
             }
         }

@@ -17,6 +17,8 @@ protocol AlbumViewModelProtocol: AnyObject {
     var headerModel: BehaviorRelay<AlbumHeaderModel?> { get }
     
     var numberOfItems: Int { get }
+    var artistName: String { get }
+    
     func didSelectAlbum(at index: Int)
     func album(at index: Int) -> AlbumResponse
 }
@@ -39,6 +41,10 @@ final class AlbumViewModel: AlbumViewModelProtocol {
     
     var artistId: String {
         artist.id
+    }
+    
+    var artistName: String {
+        artist.name
     }
     
     var numberOfItems: Int {

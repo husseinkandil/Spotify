@@ -13,20 +13,41 @@ protocol LoginViewModelProtocol: AnyObject {
     var onError: PublishRelay<Error> { get }
     var signedInUserProfile: PublishRelay<SignedinUserProfile?> { get }
     var code: PublishRelay<String> { get }
-    var completion: BehaviorRelay<Bool> { get }
     
-    func login()
+    var isSignedIn: Bool { get }
+    var signinUrl: URL { get }
 }
 
 class LoginViewModel: LoginViewModelProtocol {
     let onError: PublishRelay<Error> = .init()
     let signedInUserProfile: PublishRelay<SignedinUserProfile?> = .init()
     let code: PublishRelay<String> = .init()
-    let completion: BehaviorRelay<Bool> = .init(value: false)
     
     private let disposedBag = DisposeBag()
     
-    var user: UserProfile?
+    var signinUrl: URL {
+        guard let url = AuthenticationManager.shared.signinURL else {
+            return URL(string: "")!
+        }
+        return url
+    }
+    
+    var user: UserProfile? {
+        didSet {
+            guard let user = user else {
+                return
+            }
+            AuthenticationManager.shared.saveUser(user: user)
+        }
+    }
+    
+    var isSignedIn: Bool {
+        return accessToken != nil
+    }
+
+    private var accessToken: String? {
+        return UserDefaults.standard.string(forKey: "access_token")
+    }
     
     var username: String {
         guard let user = user else { return ""}
@@ -46,30 +67,28 @@ class LoginViewModel: LoginViewModelProtocol {
     init() {
         code
             .withUnretained(self)
-            .observe(on: MainScheduler.instance)
             .bind { strongSelf, code in
                 strongSelf.fetchToken(code: code)
             }.disposed(by: disposedBag)
     }
     
-    func fetchToken(code: String) {
+    private func fetchToken(code: String) {
         AuthenticationManager.shared.generateToken(code: code) { [weak self] success in
             guard let self = self else { return }
-            
             if success {
-                self.completion.accept(true)
                 self.login()
+            } else {
+                self.onError.accept(APIError.custom(message: "Failed to fetch token!"))
             }
         }
     }
     
-    func login() {
+    private func login() {
         APIClient.shared.getUserProfile { [weak self] result in
             guard let self = self else{ return}
             
             switch result {
             case.success(let user):
-                self.completion.accept(true)
                 self.user = user
                 self.setupUser()
             case.failure(let error):
@@ -78,12 +97,14 @@ class LoginViewModel: LoginViewModelProtocol {
         }
     }
     
-    func setupUser() {
+    private func setupUser() {
         
-        if let username = user?.display_name, let imageUrl = user?.images.first?.url, let id = user?.id {
+        if let username = user?.display_name, let id = user?.id {
+            let imageUrl = user?.images.first?.url
             let userData = SignedinUserProfile(image: imageUrl, username: username, id: id)
             self.signedInUserProfile.accept(userData)
-            
+        } else {
+            self.onError.accept(APIError.custom(message: "failed to fetch data!"))
         }
     }
 }

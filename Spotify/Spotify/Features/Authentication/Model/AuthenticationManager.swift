@@ -193,4 +193,23 @@ final class AuthenticationManager {
 
         completion(true)
     }
+    
+    func saveUser(user: UserProfile) {
+        let json = try! JSONEncoder().encode(user)
+        UserDefaults.standard.set(json, forKey: "user")
+    }
+    
+    func clearUser() {
+        UserDefaults.standard.removeObject(forKey: "user")
+    }
+    
+    func getUser() -> UserProfile? {
+        let json = UserDefaults.standard.data(forKey: "user")
+        if let json = json,
+           let user = try? JSONDecoder().decode(UserProfile.self, from: json) {
+            return user
+        } else {
+            return nil
+        }
+    }
 }
