@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Spotify
 //
-//  Created by Zein Abdalla on 18/05/2022.
+//  Created by Hussein Kandil on 18/05/2022.
 //
 
 import UIKit

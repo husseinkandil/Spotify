@@ -70,9 +70,13 @@ final class SearchViewModel: SearchViewModelProtocol {
         self.user = user
 
         searchText
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(250), scheduler: MainScheduler.instance)
             .withUnretained(self)
             .bind { strongSelf, text in
+                if text == "" {
+                    strongSelf.artistArray = []
+                    strongSelf.reload.accept(())
+                }
                 strongSelf.getArtists(text: text)
             }.disposed(by: disposedBag)
         

@@ -91,6 +91,8 @@ class SearchViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(showProfile))
         userImage.addGestureRecognizer(gesture)
         userImage.isUserInteractionEnabled = true
+        userImage.isAccessibilityElement = true
+        
         collectionView.isHidden = false
         collectionView.backgroundView = noResultLabel
         
@@ -268,6 +270,9 @@ extension SearchViewController: UISearchBarDelegate {
         let text = searchText.replacingOccurrences(of: " ", with: "%20")
         
         if searchText.isEmpty {
+            self.viewModel
+                .searchText
+                .accept("")
             collectionView.isHidden = false
             collectionView.backgroundView = noResultLabel
             viewModel.artistArray = []
