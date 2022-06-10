@@ -18,7 +18,11 @@ enum APIError: Error {
 import UIKit
 import Foundation
 
-final class APIClient {
+protocol UserProfileAPIClient: AnyObject {
+    func getUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void)
+}
+
+final class APIClient: UserProfileAPIClient {
     static let shared = APIClient()
 
     init() {}
@@ -27,7 +31,7 @@ final class APIClient {
         static let baseUrl = "https://api.spotify.com/v1"
     }
 
-    public func getUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
+    func getUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
         createRequest(with: URL(string: Constants.baseUrl+"/me"),
                       type: .GET) { request in
 

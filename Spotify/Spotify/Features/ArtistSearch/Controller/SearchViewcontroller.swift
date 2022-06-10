@@ -226,7 +226,8 @@ class SearchViewController: UIViewController {
             
             self.userImage.isHidden = true
             
-            let viewModel = LoginViewModel()
+            let apiClient = APIClient()
+            let viewModel = LoginViewModel(with: apiClient)
             self.navigationController?.pushViewController(LoginViewController(viewModel: viewModel), animated: true)
         }))
         

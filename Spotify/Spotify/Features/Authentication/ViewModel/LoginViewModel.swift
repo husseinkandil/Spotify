@@ -16,6 +16,7 @@ protocol LoginViewModelProtocol: AnyObject {
     
     var isSignedIn: Bool { get }
     var signinUrl: URL { get }
+    var user: UserProfile? { get }
 }
 
 class LoginViewModel: LoginViewModelProtocol {
@@ -64,7 +65,13 @@ class LoginViewModel: LoginViewModelProtocol {
         return user.id
     }
     
-    init() {
+    private let apiClient: UserProfileAPIClient
+    private let authenticationManager: AuthenticationManagerProtocol
+    
+    init(with apiClient: UserProfileAPIClient, authManager: AuthenticationManagerProtocol = AuthenticationManager.shared) {
+        self.authenticationManager = authManager
+        self.apiClient = apiClient
+        
         code
             .withUnretained(self)
             .bind { strongSelf, code in
@@ -73,7 +80,7 @@ class LoginViewModel: LoginViewModelProtocol {
     }
     
     private func fetchToken(code: String) {
-        AuthenticationManager.shared.generateToken(code: code) { [weak self] success in
+        authenticationManager.generateToken(code: code) { [weak self] success in
             guard let self = self else { return }
             if success {
                 self.login()
@@ -84,7 +91,7 @@ class LoginViewModel: LoginViewModelProtocol {
     }
     
     private func login() {
-        APIClient.shared.getUserProfile { [weak self] result in
+        apiClient.getUserProfile { [weak self] result in
             guard let self = self else{ return}
             
             switch result {

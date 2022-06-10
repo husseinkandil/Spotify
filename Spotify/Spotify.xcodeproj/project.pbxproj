@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EBB799828535274007DB1AC /* LoginViewmodelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB799728535274007DB1AC /* LoginViewmodelTests.swift */; };
+		1EBB799B2853606D007DB1AC /* MockUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB799A2853606D007DB1AC /* MockUserProfile.swift */; };
+		1EBB799D285360D4007DB1AC /* MockAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB799C285360D4007DB1AC /* MockAuthManager.swift */; };
 		3F6088F5F0BF1CBE883F8C49 /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAB1135F779B579526E6FBA /* libPods-Spotify.a */; };
 		9E37718E284788D2008F1CE7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37718D284788D2008F1CE7 /* LoginViewModel.swift */; };
 		9ED5C2B3283E3370003D18B4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5C2B2283E3370003D18B4 /* SearchViewModel.swift */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		07EE61C9CD8DB024A84D495A /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 		1A16747BC26E7F8F8498068A /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
+		1EBB799728535274007DB1AC /* LoginViewmodelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewmodelTests.swift; sourceTree = "<group>"; };
+		1EBB799A2853606D007DB1AC /* MockUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserProfile.swift; sourceTree = "<group>"; };
+		1EBB799C285360D4007DB1AC /* MockAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthManager.swift; sourceTree = "<group>"; };
 		5EAB1135F779B579526E6FBA /* libPods-Spotify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E37718D284788D2008F1CE7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9ED5C2B2283E3370003D18B4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +143,15 @@
 				E393BBB5E8A08B5517F0E9A4 /* Pods-Spotify-SpotifyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1EBB79992853605E007DB1AC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB799A2853606D007DB1AC /* MockUserProfile.swift */,
+				1EBB799C285360D4007DB1AC /* MockAuthManager.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		9E37718928478350008F1CE7 /* ViewModel */ = {
@@ -272,7 +287,9 @@
 		EB770675283C2B900066B5A1 /* SpotifyTests */ = {
 			isa = PBXGroup;
 			children = (
+				1EBB79992853605E007DB1AC /* Mocks */,
 				EB770676283C2B900066B5A1 /* SpotifyTests.swift */,
+				1EBB799728535274007DB1AC /* LoginViewmodelTests.swift */,
 			);
 			path = SpotifyTests;
 			sourceTree = "<group>";
@@ -578,7 +595,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBB799828535274007DB1AC /* LoginViewmodelTests.swift in Sources */,
 				EB770677283C2B900066B5A1 /* SpotifyTests.swift in Sources */,
+				1EBB799B2853606D007DB1AC /* MockUserProfile.swift in Sources */,
+				1EBB799D285360D4007DB1AC /* MockAuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +706,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8U5NB37GK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.hussein.SpotifyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -706,7 +726,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8U5NB37GK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.hussein.SpotifyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
