@@ -7,7 +7,21 @@
 
 import UIKit
 
-final class AuthenticationManager {
+protocol AuthenticationManagerProtocol: AnyObject {
+    var signinURL: URL? { get }
+    var isSignedIn: Bool { get }
+    
+    func generateToken(code: String, completion: @escaping (Bool) -> Void)
+    func refreshToken(completion: @escaping (Bool) -> Void)
+    func validateToke(completion: @escaping (String) -> Void)
+    func cacheToken(result: AuthenticationResponse)
+    func signout(completion: @escaping (Bool) -> Void)
+    func saveUser(user: UserProfile)
+    func clearUser()
+    func getUser() -> UserProfile?
+}
+
+final class AuthenticationManager: AuthenticationManagerProtocol {
 
     struct Constants {
         static let clientId = "e95850cd94094e7d83386c65ad4bfdeb"
@@ -24,7 +38,7 @@ final class AuthenticationManager {
 
     private init() {}
 
-    public var signinURL: URL?{
+    public var signinURL: URL? {
 
         let string = "\(Constants.baseUrl)?response_type=code&client_id=\(Constants.clientId)&scope=\(Constants.scope)&redirect_uri=\(Constants.redirectURI)&show_dialog=TRUE"
 
@@ -194,16 +208,16 @@ final class AuthenticationManager {
         completion(true)
     }
     
-    func saveUser(user: UserProfile) {
+    public func saveUser(user: UserProfile) {
         let json = try! JSONEncoder().encode(user)
         UserDefaults.standard.set(json, forKey: "user")
     }
     
-    func clearUser() {
+    public func clearUser() {
         UserDefaults.standard.removeObject(forKey: "user")
     }
     
-    func getUser() -> UserProfile? {
+    public func getUser() -> UserProfile? {
         let json = UserDefaults.standard.data(forKey: "user")
         if let json = json,
            let user = try? JSONDecoder().decode(UserProfile.self, from: json) {

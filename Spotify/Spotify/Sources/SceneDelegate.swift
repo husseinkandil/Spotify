@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
-        let loginViewModel = LoginViewModel()
+        
+        let apiClient = APIClient()
+        let loginViewModel = LoginViewModel(with: apiClient)
         
         if AuthenticationManager.shared.isSignedIn,
            let user = AuthenticationManager.shared.getUser() {

@@ -10,6 +10,8 @@ target 'Spotify' do
   # Pods for Spotify
 
   target 'SpotifyTests' do
+    pod 'RxBlocking'
+    pod 'RxTest'
     pod 'Kingfisher', '~> 7.0'
   end
 

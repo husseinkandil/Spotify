@@ -17,6 +17,10 @@ struct SignedinUserProfile {
     let id: String
 }
 
+extension SignedinUserProfile: Equatable {
+    
+}
+
 protocol SearchViewModelProtocol: AnyObject {
     var isLoading: BehaviorRelay<Bool> { get }
     var onError: PublishRelay<Error> { get }
