@@ -26,5 +26,14 @@ class SpotifyTests: XCTestCase {
         let expectedResult = "1,234,567"
         XCTAssertEqual(result, expectedResult)
     }
+    
+    func testNumberOfstars() {
+        let result = 3
+        let model = ArtistCollectionViewCell()
+        let mock = MockArtist()
+        model.populate(model: mock)
+        
+        XCTAssertEqual(mock.popularity, result)
+    }
 
 }

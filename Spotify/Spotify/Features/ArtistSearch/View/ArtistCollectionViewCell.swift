@@ -96,7 +96,7 @@ class ArtistCollectionViewCell: SpotifyCollectionViewCell {
         super.setupConstraints()
     }
 
-    func populate(model: Artist) {
+    func populate(model: ArtistProtocol) {
         self.nameLabel.text = model.name
 
         if let followersNumber = model.followers {

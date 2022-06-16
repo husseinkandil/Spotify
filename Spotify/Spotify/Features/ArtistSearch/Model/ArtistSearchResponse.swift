@@ -7,6 +7,14 @@
 
 import Foundation
 
+protocol ArtistProtocol {
+    var images: [ImageResponse]? { get }
+    var name: String { get }
+    var id: String { get }
+    var popularity: Int? { get }
+    var followers: Followers? { get }
+}
+
 struct ArtistsSearchResponse: Codable {
     let artists: ArtistsResponse?
 }
@@ -16,7 +24,7 @@ struct ArtistsResponse: Codable {
     var items: [Artist]
 }
 
-struct Artist: Codable {
+struct Artist: ArtistProtocol ,Codable {
     var images: [ImageResponse]?
     let name: String
     let id: String
