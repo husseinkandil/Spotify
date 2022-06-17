@@ -25,16 +25,8 @@ class LoginViewController: UIViewController {
         button.layer.shadowOpacity = 2.0
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
-//        button.setTitle("Test Crash", for: [])
-//        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
-    
-//    @objc
-//    func crashButtonTapped(_ sender: AnyObject) {
-//         let numbers = [0]
-//         let _ = numbers[1]
-//     }
 
     private let spotifyImage: UIImageView = {
         let image = UIImageView()
