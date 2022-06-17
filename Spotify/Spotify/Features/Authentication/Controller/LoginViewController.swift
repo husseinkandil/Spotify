@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         return button
     }()
-    
+
     private let spotifyImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "logo")
@@ -95,6 +96,8 @@ class LoginViewController: UIViewController {
     
     @objc
     func didTapLoginButton() {
+        Analytics.logEvent("LoginButton_Tapped", parameters: nil)
+        
         let vc = WebViewController(viewModel: viewModel)
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
