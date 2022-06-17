@@ -7,6 +7,14 @@ target 'Spotify' do
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
 
+  pod 'Firebase'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseCrashlytics'
+  pod 'FirebasePerformance'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseCore'
+
   # Pods for Spotify
 
   target 'SpotifyTests' do
@@ -15,4 +23,9 @@ target 'Spotify' do
     pod 'Kingfisher', '~> 7.0'
   end
 
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+     config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
 end
