@@ -27,7 +27,7 @@ final class AuthenticationManager: AuthenticationManagerProtocol {
         static let clientId = "e95850cd94094e7d83386c65ad4bfdeb"
         static let clientSecretId = "6232b7cfe9234e6caa579c588f741217"
         static let tokenURL = "https://accounts.spotify.com/api/token"
-        static let redirectURI = "https://www.example.com"
+        static let redirectURI = "spotifycodetest://returnafterlogin"
         static let scope = "user-read-private"
         static let baseUrl = "https://accounts.spotify.com/authorize"
     }
@@ -75,7 +75,7 @@ final class AuthenticationManager: AuthenticationManagerProtocol {
         params.queryItems = [
             URLQueryItem.init(name: "grant_type", value: "authorization_code"),
             URLQueryItem.init(name: "code", value: code),
-            URLQueryItem.init(name: "redirect_uri", value: "https://www.example.com"),
+            URLQueryItem.init(name: "redirect_uri", value: "spotifycodetest://returnafterlogin"),
         ]
 
         var request = URLRequest(url: urlString)
