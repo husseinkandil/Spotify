@@ -11,14 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
+    private let apiClient = APIClient()
+    private lazy var loginViewModel = LoginViewModel(with: apiClient)
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
-        
-        let apiClient = APIClient()
-        let loginViewModel = LoginViewModel(with: apiClient)
         
         if AuthenticationManager.shared.isSignedIn,
            let user = AuthenticationManager.shared.getUser() {
@@ -72,6 +71,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    
-}
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else { return }
 
+        let component = URLComponents(string: url.absoluteString)
+        guard let code = component?.queryItems?.first(where: { $0.name == "code"})?.value else { return }
+        print("code :\(code)")
+        
+        loginViewModel.code.accept(code)
+    }
+}

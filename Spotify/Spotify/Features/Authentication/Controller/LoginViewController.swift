@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import Firebase
+import SafariServices
 
 class LoginViewController: UIViewController {
     
@@ -24,9 +25,15 @@ class LoginViewController: UIViewController {
         button.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
         button.layer.shadowOpacity = 2.0
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(openSafari), for: .touchUpInside)
         return button
     }()
+    
+    @objc
+    func openSafari() {
+        let url = viewModel.signinUrl
+        UIApplication.shared.open(url)
+    }
 
     private let spotifyImage: UIImageView = {
         let image = UIImageView()
