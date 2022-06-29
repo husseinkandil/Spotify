@@ -201,7 +201,7 @@ class SearchViewController: UIViewController {
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
               let nsObject = Bundle.main.infoDictionary!["CFBundleVersion"] as? AnyObject else { return }
         
-        let alert = UIAlertController(title: "\(viewModel.userName)", message: "V.\(appVersion) (\(nsObject))", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "\(viewModel.userName)", message: "v.\(appVersion) (\(nsObject))", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { [weak self] action in
             guard let self = self else { return }
