@@ -22,7 +22,7 @@ class ArtistAlbumViewController: UIViewController {
     private lazy var collectionView: SpotifyCollectionView = {
         let flowLayout = CollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: view.frame.height / 2 - 120)
+        flowLayout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: view.frame.height / 2 - 100)
         flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
 
         let collectionView = SpotifyCollectionView(frame: view.frame, layout: flowLayout)
