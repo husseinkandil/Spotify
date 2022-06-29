@@ -177,7 +177,8 @@ class SearchViewController: UIViewController {
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             .bind { strongSelf, image in
-                let placeHolderImage = UIImage(systemName: "person.circle")
+                let placeHolderImage = UIImage(systemName: "person.circle")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+                
                 if let image = image {
                     strongSelf.userImage.image = image
                 } else {
@@ -200,19 +201,15 @@ class SearchViewController: UIViewController {
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
               let nsObject = Bundle.main.infoDictionary!["CFBundleVersion"] as? AnyObject else { return }
         
-        let alert = UIAlertController(title: "Profile", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "\(viewModel.userName)", message: "v.\(appVersion) (\(nsObject))", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Username: \(viewModel.userName)", style: .default, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Version: \(appVersion) (\(nsObject))", style: .default, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Log out", style: .default, handler: { [weak self] action in
+        alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { [weak self] action in
             guard let self = self else { return }
             
             self.viewModel.signout()
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alert, animated: true)
     }
