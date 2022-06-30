@@ -74,7 +74,7 @@ final class AlbumViewModel: AlbumViewModelProtocol {
     }
     
     func didSelectAlbum(at index: Int) {
-        if let urlString = album?.items.first?.external_urls["spotify"],
+        if let urlString = album?.items[index].external_urls["spotify"],
            let url = URL(string: urlString) {
             openUrl.accept(url)
         }
