@@ -38,12 +38,14 @@ class SearchViewController: UIViewController {
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.placeholder = "Search for an artist..."
-        searchBar.barStyle = .default
+        searchBar.barStyle = .black
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
-        searchBar.barTintColor = UIColor(red: 0.73, green: 0.80, blue: 0.78, alpha: 1.00)
-//        searchBar.barTintColor = .clear
+        searchBar.searchTextField.backgroundColor = UIColor(red: 0.73, green: 0.80, blue: 0.78, alpha: 1.00)
+        searchBar.searchTextField.textColor = .white
+        searchBar.barTintColor = UIColor(red: 0.31, green: 0.47, blue: 0.62, alpha: 1.00)
         searchBar.backgroundColor = .clear
+        searchBar.searchBarStyle = .minimal
         return searchBar
     }()
     
@@ -131,8 +133,8 @@ class SearchViewController: UIViewController {
             userImage.topAnchor.constraint(greaterThanOrEqualTo: navigation.topAnchor),
             userImage.trailingAnchor.constraint(greaterThanOrEqualTo: navigation.trailingAnchor, constant: -10),
             userImage.bottomAnchor.constraint(greaterThanOrEqualTo: navigation.bottomAnchor),
-            userImage.widthAnchor.constraint(equalToConstant: 50),
-            userImage.heightAnchor.constraint(equalToConstant: 50),
+            userImage.widthAnchor.constraint(equalToConstant: 45),
+            userImage.heightAnchor.constraint(equalToConstant: 45),
             
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 3),
@@ -180,7 +182,8 @@ class SearchViewController: UIViewController {
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             .bind { strongSelf, image in
-                let placeHolderImage = UIImage(systemName: "person.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+                let configiration = UIImage.SymbolConfiguration(weight: .light)
+                let placeHolderImage = UIImage(systemName: "person.circle", withConfiguration: configiration)?.withTintColor(.white, renderingMode: .alwaysOriginal)
                 
                 if let image = image {
                     strongSelf.userImage.image = image
