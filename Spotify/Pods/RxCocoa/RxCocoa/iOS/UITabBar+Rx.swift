@@ -42,9 +42,9 @@ extension Reactive where Base: UITabBar {
     public var willEndCustomizing: ControlEvent<([UITabBarItem], Bool)> {
         let source = delegate.methodInvoked(#selector(UITabBarDelegate.tabBar(_:willEndCustomizing:changed:)))
             .map { (a: [Any]) -> (([UITabBarItem], Bool)) in
-                let items = try castOrThrow([UITabBarItem].self, a[1])
+                let albums = try castOrThrow([UITabBarItem].self, a[1])
                 let changed = try castOrThrow(Bool.self, a[2])
-                return (items, changed)
+                return (albums, changed)
             }
 
         return ControlEvent(events: source)
@@ -54,9 +54,9 @@ extension Reactive where Base: UITabBar {
     public var didEndCustomizing: ControlEvent<([UITabBarItem], Bool)> {
         let source = delegate.methodInvoked(#selector(UITabBarDelegate.tabBar(_:didEndCustomizing:changed:)))
             .map { (a: [Any]) -> (([UITabBarItem], Bool)) in
-                let items = try castOrThrow([UITabBarItem].self, a[1])
+                let albums = try castOrThrow([UITabBarItem].self, a[1])
                 let changed = try castOrThrow(Bool.self, a[2])
-                return (items, changed)
+                return (albums, changed)
             }
 
         return ControlEvent(events: source)

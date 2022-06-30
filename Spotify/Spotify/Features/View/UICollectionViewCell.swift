@@ -15,6 +15,7 @@ class SpotifyCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .natural
         label.textColor = .white
+        label.numberOfLines = 0
         return label
     }()
 
@@ -27,6 +28,11 @@ class SpotifyCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -51,11 +57,12 @@ class SpotifyCollectionViewCell: UICollectionViewCell {
 
             nameLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 
     func downloadImage(url: String) {
-        let placeHolderImage = UIImage(systemName: "person.circle")
+        let placeHolderImage = UIImage(named: "placeholderImage")
 
         let urlString = url
         let url = URL(string: urlString)
