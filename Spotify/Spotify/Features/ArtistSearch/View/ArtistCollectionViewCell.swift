@@ -74,7 +74,7 @@ class ArtistCollectionViewCell: SpotifyCollectionViewCell {
     override func setupConstraints() {
         NSLayoutConstraint.activate([
 
-            starsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            starsView.topAnchor.constraint(equalTo: followersLabel.bottomAnchor, constant: 8),
             starsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
 
             followersLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3),
