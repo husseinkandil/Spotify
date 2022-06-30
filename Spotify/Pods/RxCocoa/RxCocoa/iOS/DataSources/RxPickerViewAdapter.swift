@@ -12,13 +12,13 @@ import UIKit
 import RxSwift
 
 class RxPickerViewArrayDataSource<T>: NSObject, UIPickerViewDataSource, SectionedViewDataSourceType {
-    fileprivate var items: [T] = []
+    fileprivate var albums: [T] = []
     
     func model(at indexPath: IndexPath) throws -> Any {
-        guard items.indices ~= indexPath.row else {
+        guard albums.indices ~= indexPath.row else {
             throw RxCocoaError.itemsNotYetBound(object: self)
         }
-        return items[indexPath.row]
+        return albums[indexPath.row]
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -26,7 +26,7 @@ class RxPickerViewArrayDataSource<T>: NSObject, UIPickerViewDataSource, Sectione
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        items.count
+        albums.count
     }
 }
 
@@ -36,8 +36,8 @@ class RxPickerViewSequenceDataSource<Sequence: Swift.Sequence>
     typealias Element = Sequence
 
     func pickerView(_ pickerView: UIPickerView, observedEvent: Event<Sequence>) {
-        Binder(self) { dataSource, items in
-            dataSource.items = items
+        Binder(self) { dataSource, albums in
+            dataSource.albums = albums
             pickerView.reloadAllComponents()
         }
         .on(observedEvent.map(Array.init))
@@ -57,7 +57,7 @@ final class RxStringPickerViewAdapter<Sequence: Swift.Sequence>
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        titleForRow(row, items[row])
+        titleForRow(row, albums[row])
     }
 }
 
@@ -71,7 +71,7 @@ final class RxAttributedStringPickerViewAdapter<Sequence: Swift.Sequence>: RxPic
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        attributedTitleForRow(row, items[row])
+        attributedTitleForRow(row, albums[row])
     }
 }
 
@@ -85,7 +85,7 @@ final class RxPickerViewAdapter<Sequence: Swift.Sequence>: RxPickerViewSequenceD
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        viewForRow(row, items[row], view)
+        viewForRow(row, albums[row], view)
     }
 }
 

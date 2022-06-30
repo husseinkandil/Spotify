@@ -42,6 +42,8 @@ class SearchViewController: UIViewController {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
         searchBar.barTintColor = UIColor(red: 0.73, green: 0.80, blue: 0.78, alpha: 1.00)
+//        searchBar.barTintColor = .clear
+        searchBar.backgroundColor = .clear
         return searchBar
     }()
     
@@ -57,7 +59,7 @@ class SearchViewController: UIViewController {
     private lazy var collectionView: SpotifyCollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: view.frame.height / 4 + 50)
+        layout.itemSize = CGSize(width: view.frame.width / 2 - 20, height: view.frame.height / 4 + 80)
         
         let collectionView = SpotifyCollectionView(frame: view.frame, layout: layout)
         collectionView.register(ArtistCollectionViewCell.self, forCellWithReuseIdentifier: ArtistCollectionViewCell.identifier)
@@ -82,6 +84,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Artists"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationItem.hidesBackButton = true
         gradient.frame = view.bounds
         view.layer.addSublayer(gradient)
@@ -177,7 +180,7 @@ class SearchViewController: UIViewController {
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             .bind { strongSelf, image in
-                let placeHolderImage = UIImage(systemName: "person.circle")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+                let placeHolderImage = UIImage(systemName: "person.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal)
                 
                 if let image = image {
                     strongSelf.userImage.image = image
