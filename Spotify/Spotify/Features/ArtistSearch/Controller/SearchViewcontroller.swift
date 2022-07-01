@@ -111,8 +111,13 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userImage.isHidden = false
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        userImage.isHidden = true
+    }
     private func setupView() {
         defer {
             setupConstraints()
@@ -298,5 +303,11 @@ extension SearchViewController: UISearchBarDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
+    }
+}
+
+extension SearchViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
     }
 }

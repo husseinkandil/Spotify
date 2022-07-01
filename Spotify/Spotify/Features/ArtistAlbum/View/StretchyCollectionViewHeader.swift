@@ -73,6 +73,7 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
 
             followersLabel.leadingAnchor.constraint(equalTo: AlbumLabel.leadingAnchor),
             followersLabel.bottomAnchor.constraint(equalTo: AlbumLabel.topAnchor, constant: -2),
+            followersLabel.heightAnchor.constraint(equalToConstant: 20),
 
             AlbumLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             AlbumLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 18),
