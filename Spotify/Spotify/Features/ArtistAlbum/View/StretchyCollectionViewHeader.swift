@@ -20,6 +20,9 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
         @AutoLayout var label = UILabel()
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 45)
+        label.numberOfLines = 2
+        label.shadowOffset = CGSize(width: 2, height: 2)
+        label.shadowColor = .black
         return label
     }()
 
@@ -66,6 +69,7 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
 
             label.bottomAnchor.constraint(equalTo: followersLabel.topAnchor, constant: -2),
             label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -2),
 
             followersLabel.leadingAnchor.constraint(equalTo: AlbumLabel.leadingAnchor),
             followersLabel.bottomAnchor.constraint(equalTo: AlbumLabel.topAnchor, constant: -2),
