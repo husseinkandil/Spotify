@@ -81,15 +81,15 @@ class ArtistAlbumCollectionViewCell: SpotifyCollectionViewCell {
 
             artistName.topAnchor.constraint(greaterThanOrEqualTo: albumName.bottomAnchor, constant: 3),
             artistName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-
-            numberOfArtists.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            numberOfArtists.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-
-            numberOfTracks.bottomAnchor.constraint(equalTo: numberOfArtists.topAnchor, constant: -3),
+            
+            dateReleased.leadingAnchor.constraint(equalTo: numberOfTracks.leadingAnchor),
+            dateReleased.topAnchor.constraint(equalTo: artistName.bottomAnchor, constant: 3),
+            
+            numberOfTracks.topAnchor.constraint(equalTo: dateReleased.bottomAnchor, constant: 3),
             numberOfTracks.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
 
-            dateReleased.leadingAnchor.constraint(equalTo: numberOfTracks.leadingAnchor),
-            dateReleased.bottomAnchor.constraint(equalTo: numberOfTracks.topAnchor, constant: -3),
+            numberOfArtists.topAnchor.constraint(equalTo: numberOfTracks.bottomAnchor, constant: 5),
+            numberOfArtists.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
         ])
 
         super.setupConstraints()

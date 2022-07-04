@@ -211,12 +211,14 @@ extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewD
         guard let navigation = navigation else { return }
         navigationController?.navigationBar.addSubview(backButtonImageView)
         NSLayoutConstraint.activate([
-            backButtonImageView.topAnchor.constraint(equalTo: navigation.topAnchor, constant: -5),
             backButtonImageView.leadingAnchor.constraint(equalTo: navigation.leadingAnchor, constant: 5),
-            backButtonImageView.bottomAnchor.constraint(equalTo: navigation.bottomAnchor, constant: -2),
-            backButtonImageView.widthAnchor.constraint(equalTo: backButtonImageView.heightAnchor)
+            backButtonImageView.bottomAnchor.constraint(equalTo: navigation.bottomAnchor, constant: -5),
+            backButtonImageView.widthAnchor.constraint(equalTo: backButtonImageView.heightAnchor),
+            backButtonImageView.heightAnchor.constraint(equalToConstant: 30),
+            
         ])
         backButtonImageView.tintColor = .black.withAlphaComponent(0.3)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         title = viewModel.artistName
     }
 
@@ -229,9 +231,9 @@ extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewD
         backButtonImageView.addSubview(backButton)
         
         NSLayoutConstraint.activate([
-            backButtonImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            backButtonImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
-            backButtonImageView.widthAnchor.constraint(equalToConstant: 50),
+            backButtonImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            backButtonImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            backButtonImageView.widthAnchor.constraint(equalToConstant: 45),
             backButtonImageView.heightAnchor.constraint(equalTo: backButtonImageView.widthAnchor),
 
             backButton.topAnchor.constraint(equalTo: backButtonImageView.topAnchor),
