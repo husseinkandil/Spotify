@@ -15,14 +15,18 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
+    
+    var labelBackground: UIView = {
+        @AutoLayout var view = UIView()
+        view.backgroundColor = .black.withAlphaComponent(0.2)
+        return view
+    }()
 
     var label: UILabel = {
         @AutoLayout var label = UILabel()
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 45)
+        label.font = UIFont.boldSystemFont(ofSize: 40)
         label.numberOfLines = 2
-        label.shadowOffset = CGSize(width: 2, height: 2)
-        label.shadowColor = .black
         return label
     }()
 
@@ -55,6 +59,7 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
             setupConstraints()
         }
         addSubview(imageView)
+        addSubview(labelBackground)
         addSubview(label)
         addSubview(followersLabel)
         addSubview(AlbumLabel)
@@ -66,10 +71,15 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: label.bottomAnchor),
+            
+            labelBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            labelBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            labelBackground.heightAnchor.constraint(equalTo: label.heightAnchor),
+            labelBackground.bottomAnchor.constraint(equalTo: followersLabel.topAnchor, constant: -2),
 
             label.bottomAnchor.constraint(equalTo: followersLabel.topAnchor, constant: -2),
-            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -2),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 
             followersLabel.leadingAnchor.constraint(equalTo: AlbumLabel.leadingAnchor),
             followersLabel.bottomAnchor.constraint(equalTo: AlbumLabel.topAnchor, constant: -2),
