@@ -11,6 +11,11 @@ import RxSwift
 
 class SearchViewController: UIViewController {
     
+    var loader: UIActivityIndicatorView  = {
+        @AutoLayout var loader = UIActivityIndicatorView(style: .whiteLarge)
+        return loader
+    }()
+    
     private lazy var navigationView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -127,6 +132,7 @@ class SearchViewController: UIViewController {
         navigation.addSubview(userImage)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        view.addSubview(loader)
     }
     
     private func setupConstraints() {
@@ -149,20 +155,38 @@ class SearchViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
         ])
     }
     
+//    private func showLoader() {
+//        loader = UIActivityIndicatorView(style: .large)
+//        loader?.center = self.view.center
+//        self.view.addSubview(loader!)
+//        loader?.startAnimating()
+//    }
+    
+//    private func hideLoader() {
+//        if loader != nil {
+//            loader?.stopAnimating()
+//            self.view.willRemoveSubview(loader!)
+//        }
+//    }
+    
     private func activateBindings() {
         viewModel
             .isLoading
+            .withUnretained(self)
             .observe(on: MainScheduler.instance)
-            .bind { isLoading in
+            .bind { strongSelf, isLoading in
                 if isLoading {
-                    print("loading started")
+                    strongSelf.loader.startAnimating()
                 } else {
-                    print("loading finished")
+                    strongSelf.loader.stopAnimating()
                 }
             }.disposed(by: disposedBag)
         

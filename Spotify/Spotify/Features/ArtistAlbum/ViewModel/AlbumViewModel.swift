@@ -53,6 +53,7 @@ final class AlbumViewModel: AlbumViewModelProtocol {
     }
     
     init(artist: Artist) {
+        isLoading.accept(true)
         self.artist = artist
         getArtistAlbum()
         generateHeaderModel()

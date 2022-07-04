@@ -77,6 +77,7 @@ final class SearchViewModel: SearchViewModelProtocol {
             .debounce(.milliseconds(250), scheduler: MainScheduler.instance)
             .withUnretained(self)
             .bind { strongSelf, text in
+                strongSelf.isLoading.accept(true)
                 if text == "" {
                     strongSelf.artistArray = []
                     strongSelf.reload.accept(())
