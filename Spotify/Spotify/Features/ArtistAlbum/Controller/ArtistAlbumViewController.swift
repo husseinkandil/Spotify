@@ -12,6 +12,11 @@ import RxSwift
 import RxCocoa
 
 class ArtistAlbumViewController: UIViewController {
+    
+    private var loader: UIActivityIndicatorView = {
+        @AutoLayout var loader = UIActivityIndicatorView(style: .whiteLarge)
+        return loader
+    }()
 
     private var albumResult = [AlbumResponse]()
     private var id: String?
@@ -100,6 +105,7 @@ class ArtistAlbumViewController: UIViewController {
             setupConstraints()
         }
         view.addSubview(collectionView)
+        view.addSubview(loader)
     }
 
     private func setupConstraints() {
@@ -109,7 +115,10 @@ class ArtistAlbumViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor),
 
         ])
     }
@@ -127,12 +136,13 @@ class ArtistAlbumViewController: UIViewController {
     private func activateBindings() {
         viewModel
             .isLoading
+            .withUnretained(self)
             .observe(on: MainScheduler.instance)
-            .bind { isLoading in
+            .bind { strongSelf, isLoading in
                 if isLoading {
-                    print("Loading started")
+                    strongSelf.loader.startAnimating()
                 } else {
-                    print("Loading finished")
+                    strongSelf.loader.stopAnimating()
                 }
             }.disposed(by: disposeBag)
         
