@@ -82,7 +82,7 @@ class ArtistAlbumViewController: UIViewController {
         view.layer.addSublayer(gradient)
         setupView()
         activateBindings()
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -249,6 +249,12 @@ extension ArtistAlbumViewController: UICollectionViewDelegate, UICollectionViewD
 extension ArtistAlbumViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.collectionView.frame.size.width, height: self.view.frame.height / 3)
+    }
+}
+
+extension ArtistAlbumViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 
