@@ -104,8 +104,9 @@ class ArtistCollectionViewCell: SpotifyCollectionViewCell {
                 self.followersLabel.text = SpotifyNumberFormatter.formattedNumberOfFollowers(numberOfFollowers: followers) + " followers"
             }
         }
-
-        if let url = model.images?.first?.url {
+        if model.images?.first == nil {
+            self.image.image = UIImage(named: "placeholderImage")
+        } else if let url = model.images?.first?.url {
             downloadImage(url: url)
         }
 

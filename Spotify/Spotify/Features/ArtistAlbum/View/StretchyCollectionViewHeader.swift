@@ -96,12 +96,15 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
         
         followersLabel.text = model.followersLabelText
         label.text = model.artistName
-        guard let url = model.artistImageUrl else { return }
+        if model.artistImageUrl == nil {
+            self.imageView.image = UIImage(named: "placeholderImage")
+        } else if let url = model.artistImageUrl {
         downloadImage(url: url)
+        }
     }
 
     func downloadImage(url: String) {
-        let placeHolderImage = UIImage(systemName: "person.circle")
+        let placeHolderImage = UIImage(named: "placeholderImage")
 
         let urlString = url
         let url = URL(string: urlString)

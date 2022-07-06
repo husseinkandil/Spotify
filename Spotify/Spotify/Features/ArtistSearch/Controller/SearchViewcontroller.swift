@@ -163,20 +163,6 @@ class SearchViewController: UIViewController {
         ])
     }
     
-//    private func showLoader() {
-//        loader = UIActivityIndicatorView(style: .large)
-//        loader?.center = self.view.center
-//        self.view.addSubview(loader!)
-//        loader?.startAnimating()
-//    }
-    
-//    private func hideLoader() {
-//        if loader != nil {
-//            loader?.stopAnimating()
-//            self.view.willRemoveSubview(loader!)
-//        }
-//    }
-    
     private func activateBindings() {
         viewModel
             .isLoading
