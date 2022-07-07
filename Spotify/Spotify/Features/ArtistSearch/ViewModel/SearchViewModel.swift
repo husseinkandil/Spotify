@@ -8,8 +8,6 @@
 import Foundation
 import RxCocoa
 import RxSwift
-import Kingfisher
-
 
 struct SignedinUserProfile {
     let image: String?
@@ -85,18 +83,13 @@ final class SearchViewModel: SearchViewModelProtocol {
                 strongSelf.getArtists(text: text)
             }.disposed(by: disposedBag)
         
-        if let profileImageUrl = profileImageUrl,
-           let imageUrl = URL(string: profileImageUrl) {
-            KingfisherManager.shared.retrieveImage(with: imageUrl) { [weak self] result in
+        if let profileImageUrl = profileImageUrl {
+            
+            ImageDownlaoder.shared.downloadImage(url: profileImageUrl, completionHandler: { [weak self] image, success in
                 guard let self = self else { return }
                 
-                switch result {
-                case .failure(let error):
-                    self.onError.accept(error)
-                case .success(let image):
-                    self.profileImage.accept(image.image)
-                }
-            }
+                self.profileImage.accept(image)
+            }, placeholderImage: nil)
         }
     }
     

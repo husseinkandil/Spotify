@@ -2,7 +2,6 @@
  platform :ios, '9.0'
 
 target 'Spotify' do
-  pod 'Kingfisher', '~> 7.0'
   pod 'IQKeyboardManagerSwift'
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
@@ -14,13 +13,13 @@ target 'Spotify' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseCore'
+  pod 'GoogleSignIn'
 
   # Pods for Spotify
 
   target 'SpotifyTests' do
     pod 'RxBlocking'
     pod 'RxTest'
-    pod 'Kingfisher', '~> 7.0'
   end
 
   post_install do |installer|

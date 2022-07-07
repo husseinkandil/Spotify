@@ -7,7 +7,6 @@
 
 import UIKit
 import SafariServices
-import Kingfisher
 import RxSwift
 import RxCocoa
 
