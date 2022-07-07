@@ -60,14 +60,11 @@ class SpotifyCollectionViewCell: UICollectionViewCell {
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
-
+    
     func downloadImage(url: String) {
-        let placeHolderImage = UIImage(named: "placeholderImage")
-
-        let urlString = url
-        let url = URL(string: urlString)
-        DispatchQueue.main.async {
-            self.image.kf.setImage(with: url, placeholder: placeHolderImage)
-        }
+        self.image.image = UIImage(named: "placeholderImage")
+        ImageDownlaoder.shared.downloadImage(url: url, completionHandler: { image, success in
+            self.image.image = image
+        }, placeholderImage: UIImage(named: "placeholderImage"))
     }
 }

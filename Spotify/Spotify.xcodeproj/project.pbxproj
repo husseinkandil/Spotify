@@ -19,6 +19,7 @@
 		9EE3E6F5284E09D70025F58C /* SpotifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3E6F4284E09D70025F58C /* SpotifyUITests.swift */; };
 		9EE3E6F7284E09D70025F58C /* SpotifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3E6F6284E09D70025F58C /* SpotifyUITestsLaunchTests.swift */; };
 		9EE3E70328571A4A0025F58C /* MockArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3E70228571A4A0025F58C /* MockArtist.swift */; };
+		9EE68C4E2876E0A50074C380 /* ImageDownlaoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE68C4D2876E0A50074C380 /* ImageDownlaoder.swift */; };
 		EB0B7D2A283630A000BB70A5 /* ArtistSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B7D29283630A000BB70A5 /* ArtistSearchResponse.swift */; };
 		EB0B7D2E283631B300BB70A5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B7D2D283631B300BB70A5 /* UIView.swift */; };
 		EB2F892D28377F8E00095F3E /* ArtistalbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F892C28377F8E00095F3E /* ArtistalbumResponse.swift */; };
@@ -83,6 +84,7 @@
 		9EE3E6F4284E09D70025F58C /* SpotifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyUITests.swift; sourceTree = "<group>"; };
 		9EE3E6F6284E09D70025F58C /* SpotifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9EE3E70228571A4A0025F58C /* MockArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockArtist.swift; sourceTree = "<group>"; };
+		9EE68C4D2876E0A50074C380 /* ImageDownlaoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownlaoder.swift; sourceTree = "<group>"; };
 		E393BBB5E8A08B5517F0E9A4 /* Pods-Spotify-SpotifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify-SpotifyTests.release.xcconfig"; path = "Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C287AAE2521818D4C66E8C /* libPods-Spotify-SpotifyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify-SpotifyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E77A176F77DE6A12010C3F /* Pods-Spotify-SpotifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify-SpotifyTests.debug.xcconfig"; path = "Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6C80F8283534EC0067E597 /* APIClient.swift */,
+				9EE68C4D2876E0A50074C380 /* ImageDownlaoder.swift */,
 			);
 			path = APICall;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				EBB85E8328364AEE006E14C3 /* ArtistCollectionViewCell.swift in Sources */,
 				EB6C80F9283534EC0067E597 /* APIClient.swift in Sources */,
 				EB0B7D2A283630A000BB70A5 /* ArtistSearchResponse.swift in Sources */,
+				9EE68C4E2876E0A50074C380 /* ImageDownlaoder.swift in Sources */,
 				EB9B82A828350680004BF102 /* AuthenticationResponse.swift in Sources */,
 				EB799CE72834EB6000BBE10A /* UIColor.swift in Sources */,
 				EB799CCE2834E7CA00BBE10A /* AppDelegate.swift in Sources */,
