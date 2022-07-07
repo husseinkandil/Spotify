@@ -23,10 +23,17 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
     }()
 
     var label: UILabel = {
-        @AutoLayout var label = UILabel()
+        var frame = CGRect(x: 40, y: 40, width: 300, height: 60)
+        @AutoLayout var label = UILabel(frame: frame)
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 40)
         label.numberOfLines = 2
+        label.layer.shadowColor = UIColor.gray.withAlphaComponent(0.8).cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label.layer.masksToBounds = false
+        label.frame = frame
         return label
     }()
 
@@ -59,7 +66,6 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
             setupConstraints()
         }
         addSubview(imageView)
-        addSubview(labelBackground)
         addSubview(label)
         addSubview(followersLabel)
         addSubview(AlbumLabel)
@@ -72,11 +78,6 @@ class StretchyCollectionHeaderView: UICollectionReusableView {
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: label.bottomAnchor),
             
-            labelBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            labelBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            labelBackground.heightAnchor.constraint(equalTo: label.heightAnchor),
-            labelBackground.bottomAnchor.constraint(equalTo: followersLabel.topAnchor, constant: -2),
-
             label.bottomAnchor.constraint(equalTo: followersLabel.topAnchor, constant: -2),
             label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             label.trailingAnchor.constraint(equalTo: self.trailingAnchor),
