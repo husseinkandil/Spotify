@@ -61,10 +61,23 @@ class SpotifyCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    private var imageUrl: String?
+    
     func downloadImage(url: String) {
+        self.imageUrl = url
         self.image.image = UIImage(named: "placeholderImage")
-        ImageDownlaoder.shared.downloadImage(url: url, completionHandler: { image, success in
+        ImageDownlaoder.shared.downloadImage(url: url, completionHandler: { [weak self] image, _ in
+            guard let self = self else { return }
             self.image.image = image
         }, placeholderImage: UIImage(named: "placeholderImage"))
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        image.image = nil
+        guard let imageUrl = imageUrl else {
+            return
+        }
+        ImageDownlaoder.shared.cancelDownloadForUrl(url: imageUrl)
     }
 }

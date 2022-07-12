@@ -94,4 +94,10 @@ final class ImageDownlaoder {
             return imagesDownloadTasks[urlString]
         }
     }
+    
+    public func cancelDownloadForUrl(url: String) {
+        guard let dataTask = getDataTaskFrom(urlString: url) else { return }
+        dataTask.cancel()
+        imagesDownloadTasks[url] = nil
+    }
 }
