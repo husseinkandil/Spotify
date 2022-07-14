@@ -3,6 +3,8 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+xcuserdata/
+
 # Node artifact files
 node_modules/
 dist/
@@ -18,6 +20,11 @@ dist/
 
 # Package files
 *.jar
+*.xcuserstate
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata
 
 # Maven
 target/
@@ -48,3 +55,4 @@ Thumbs.db
 *.mov
 *.wmv
 
+.build/

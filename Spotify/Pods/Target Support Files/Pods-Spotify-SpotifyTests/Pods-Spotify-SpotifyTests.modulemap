@@ -1,0 +1,6 @@
+module Pods_Spotify_SpotifyTests {
+  umbrella header "Pods-Spotify-SpotifyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
